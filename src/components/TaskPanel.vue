@@ -13,7 +13,7 @@
     </div>
     <div class="mt-2">
       <div
-        class="mt-1 p-2 border border-solid border-gray-300 rounded-lg cursor-pointer "
+        class="mt-1 p-2 border border-solid border-gray-300 rounded-lg cursor-pointer"
         draggable="true"
         @dragstart="onDragStart($event, task)"
         v-for="task in tasks"
@@ -23,17 +23,19 @@
           <p>{{ task.name }}</p>
           <Tag :severity="tagColour(task.reward)">{{ task.reward }}</Tag>
         </div>
-        <div v-if="task.requirements != 'N/A'" class="text-sm text-gray-600">{{ task.requirements }}</div>
+        <div v-if="task.requirements != 'N/A'" class="text-sm text-gray-600">
+          {{ task.requirements }}
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { ToggleButton, Checkbox, Tag } from "primevue";
+import { ToggleButton, Tag, Button } from "primevue";
 import { useTaskStore } from "@/stores/taskStore";
 import { regionIcons } from "@/utils/regionIcons";
-import { computed, ref } from "vue";
+import { computed } from "vue";
 import type { Task } from "@/types";
 import { useRouteStore } from "@/stores/routeStore";
 
