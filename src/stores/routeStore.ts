@@ -31,12 +31,38 @@ export const useRouteStore = defineStore("routes", () => {
     tasks.value[index].completed = false;
   };
 
+  const saveTasksToFile = () => {
+    const tasksJson = JSON.stringify(tasks.value, null, 2);
+    const blob = new Blob([tasksJson], { type: 'application/json' });
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = 'osrs-route.json';
+    link.click();
+    URL.revokeObjectURL(link.href);
+  };
+
+  const loadTasksFromFile = (file: File) => {
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      try {
+        const loadedTasks = JSON.parse(e.target?.result as string) as Task[];
+        tasks.value = loadedTasks;
+      } catch (error) {
+        console.error('Error loading tasks:', error);
+        alert('Failed to load tasks. Please check the file format.');
+      }
+    };
+    reader.readAsText(file);
+  };
+
   return {
     tasks,
     addTask,
     removeTask,
     updateTasks,
     completeTask,
-    revertTask
+    revertTask,
+    saveTasksToFile,
+    loadTasksFromFile
   };
 });

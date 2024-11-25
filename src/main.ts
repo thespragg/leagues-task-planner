@@ -6,11 +6,12 @@ import "./style.css";
 import { definePreset } from "@primevue/themes";
 import Aura from "@primevue/themes/aura"
 import 'primeicons/primeicons.css'
+import ToastService from 'primevue/toastservice';
 
 const app = createApp(App);
 
 app.use(createPinia());
-
+app.use(ToastService);
 
 const Noir = definePreset(Aura, {
   semantic: {
