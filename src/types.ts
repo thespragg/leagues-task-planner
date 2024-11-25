@@ -3,6 +3,7 @@ export type Task = {
   name: string;
   description: string;
   reward: number;
+  requirements: string;
   completed: boolean;
 };
 
@@ -24,3 +25,19 @@ export enum Region {
     Kourend,
     Varlamore
 }
+
+export interface ThresholdInfo {
+  points: number;
+  name: string;
+  color: string;
+}
+
+export interface DividerItem extends ThresholdInfo {
+  type: "divider";
+}
+
+export interface TaskItem extends Task {
+  type: "task";
+}
+
+export type ListItem = TaskItem | DividerItem;

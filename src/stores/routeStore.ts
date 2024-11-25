@@ -17,20 +17,26 @@ export const useRouteStore = defineStore("routes", () => {
     }
   };
 
-  const updateTasks = (newTasks: Task[]) => 
-    (tasks.value = newTasks);
+  const updateTasks = (newTasks: Task[]) => (tasks.value = newTasks);
 
   const completeTask = (id: number) => {
-    const index = tasks.value.findIndex(x=>x.id == id);
-    if(index == -1) return;
+    const index = tasks.value.findIndex((x) => x.id == id);
+    if (index == -1) return;
     tasks.value[index].completed = true;
-  }
+  };
+
+  const revertTask = (id: number) => {
+    const index = tasks.value.findIndex((x) => x.id == id);
+    if (index == -1) return;
+    tasks.value[index].completed = false;
+  };
 
   return {
     tasks,
     addTask,
     removeTask,
     updateTasks,
-    completeTask
+    completeTask,
+    revertTask
   };
 });

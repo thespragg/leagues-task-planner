@@ -19,11 +19,12 @@ export const parseTasksJson = (jsonData: any): AreaTasks => {
     }
 
     areaTasks[region] = (tasks as any[]).map((task) => ({
-      id: task.id,
-      name: task.name,
-      description: task.description,
-      reward: task.reward,
+      id: task.Id,
+      name: task.Name,
+      description: task.Description,
+      reward: task.Reward,
       completed: false,
+      requirements: task.Requirements
     }));
   });
 

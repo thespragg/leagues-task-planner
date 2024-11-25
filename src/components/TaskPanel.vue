@@ -11,22 +11,19 @@
         <template #default> <img :src="regionIcons[region]" /></template>
       </ToggleButton>
     </div>
-    <div class="flex items-center justify-center py-4">
-      <Checkbox inputId="hide-in-route" v-model="hideInRoute" binary />
-      <label for="hide-in-route" class="ml-2">
-        Hide Tasks already in route
-      </label>
-    </div>
-    <div>
+    <div class="mt-2">
       <div
-        class="mt-1 p-2 border border-solid border-gray-300 rounded-lg cursor-pointer flex items-center justify-between"
+        class="mt-1 p-2 border border-solid border-gray-300 rounded-lg cursor-pointer "
         draggable="true"
         @dragstart="onDragStart($event, task)"
-        v-for="task in taskStore.taskList"
+        v-for="task in tasks"
         :key="task.name"
       >
-        <p>{{ task.name }}</p>
-        <Tag :severity="tagColour(task.reward)">{{ task.reward }}</Tag>
+        <div class="flex items-center justify-between">
+          <p>{{ task.name }}</p>
+          <Tag :severity="tagColour(task.reward)">{{ task.reward }}</Tag>
+        </div>
+        <div v-if="task.requirements != 'N/A'" class="text-sm text-gray-600">{{ task.requirements }}</div>
       </div>
     </div>
   </div>
@@ -38,9 +35,10 @@ import { useTaskStore } from "@/stores/taskStore";
 import { regionIcons } from "@/utils/regionIcons";
 import { computed, ref } from "vue";
 import type { Task } from "@/types";
+import { useRouteStore } from "@/stores/routeStore";
 
-const hideInRoute = ref<boolean>(true);
 const taskStore = useTaskStore();
+const routeStore = useRouteStore();
 
 const regionModel = computed({
   get: () => taskStore.regionToggles,
@@ -54,9 +52,15 @@ const tagColour = (value: number) => {
 };
 
 const onDragStart = (event: DragEvent, item: Task) => {
-  event.dataTransfer!.effectAllowed = 'copy'
-  event.dataTransfer!.setData('application/json', JSON.stringify(item))
-}
+  event.dataTransfer!.effectAllowed = "copy";
+  event.dataTransfer!.setData("application/json", JSON.stringify(item));
+};
+
+const tasks = computed(() =>
+  taskStore.taskList.filter(
+    (j) => routeStore.tasks.findIndex((x) => x.id == j.id) == -1
+  )
+);
 </script>
 
 <style scoped>

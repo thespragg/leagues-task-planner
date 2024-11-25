@@ -1,35 +1,167 @@
 <template>
   <div class="w-full" @dragover.prevent @drop="onDrop">
     <ul class="target-list">
-      <li
-        class="mt-1 p-4 border border-solid border-gray-300 rounded-lg cursor-pointer flex items-center justify-between"
-        :class="item.completed ? 'bg-green-200/20' : 'bg-white'"
-        v-for="item in routeStore.tasks.filter(
-          (x) => showCompleted || !x.completed
-        )"
-        :key="item.name"
+      <template
+        v-for="(item, index) in tasksWithDividers"
+        :key="item.type === 'divider' ? `divider-${index}` : item.id"
       >
-        <p>{{ item.name }}</p>
-        <Tag :severity="tagColour(item.reward)">{{ item.reward }}</Tag>
-        <div>
-          <Button
-            icon="pi pi-check"
-            @click="routeStore.completeTask(item.id)"
-          ></Button>
-        </div>
-      </li>
+        <template v-if="item.type === 'divider'">
+          <li>
+            <TierDivider
+              :number="item.points"
+              :name="item.name"
+              :color="item.color"
+            />
+          </li>
+        </template>
+        <template v-else>
+          <li
+            class="mt-1 px-4 py-1 w-11/12 border border-solid border-gray-300 rounded-lg cursor-pointer grid grid-cols-3"
+            :class="item.completed ? 'bg-green-200/20' : 'bg-white'"
+          >
+            <div class="flex items-center">
+              <p>{{ item.name }}</p>
+            </div>
+            <div class="flex items-center justify-center">
+              <Tag :severity="tagColour(item.reward)">{{ item.reward }}</Tag>
+            </div>
+            <div class="flex items-center justify-center">
+              <div>
+                <Button
+                  variant="outlined"
+                  class="hover:!bg-green-200"
+                  icon="pi pi-check"
+                  @click="routeStore.completeTask(item.id)"
+                  v-if="!item.completed"
+                ></Button>
+                <Button
+                  v-else
+                  variant="outlined"
+                  class="hover:!bg-red-200"
+                  icon="pi pi-times"
+                  @click="routeStore.revertTask(item.id)"
+                ></Button>
+              </div>
+            </div>
+          </li>
+        </template>
+      </template>
     </ul>
   </div>
 </template>
 
 <script lang="ts" setup>
+import { computed } from "vue";
 import { Tag, Button } from "primevue";
 import { useRouteStore } from "@/stores/routeStore";
-import type { Task } from "@/types";
+import type { ListItem, Task, TaskItem, ThresholdInfo } from "@/types";
+import TierDivider from "@/components/TierDivider.vue";
 
-defineProps<{ showCompleted: boolean }>();
-
+const props = defineProps<{ showCompleted: boolean }>();
 const routeStore = useRouteStore();
+
+const relicThresholds: ThresholdInfo[] = [
+  { points: 500, name: "Relic 2", color: "#5a98e8" },
+  { points: 1200, name: "Relic 3", color: "#5a98e8" },
+  { points: 2000, name: "Relic 4", color: "#5a98e8" },
+  { points: 4000, name: "Relic 5", color: "#5a98e8" },
+  { points: 7500, name: "Relic 6", color: "#5a98e8" },
+  { points: 15000, name: "Relic 7", color: "#5a98e8" },
+  { points: 24000, name: "Relic 8", color: "#5a98e8" },
+];
+
+const tierThresholds: ThresholdInfo[] = [
+  { points: 2500, name: "Bronze", color: "#CD7F32" },
+  { points: 5000, name: "Iron", color: "#A19D94" },
+  { points: 10000, name: "Steel", color: "#43464B" },
+  { points: 18000, name: "Mithril", color: "#2d4c8a" },
+  { points: 28000, name: "Adamant", color: "#0f3b09" },
+  { points: 42000, name: "Rune", color: "#00FFFF" },
+  { points: 56000, name: "Dragon", color: "#FF0000" },
+];
+
+const regionThresholds: ThresholdInfo[] = [
+  { points: 60, name: "Region 1", color: "#9954de" },
+  { points: 140, name: "Region 2", color: "#9954de" },
+  { points: 300, name: "Region 3", color: "#9954de" },
+];
+
+const allThresholds = [...relicThresholds, ...tierThresholds].sort(
+  (a, b) => a.points - b.points
+);
+
+const tasksWithDividers = computed(() => {
+  const result: ListItem[] = [];
+  let pointSum = 0;
+  let taskCount = 0;
+  let allPrecedingTasksCompleted = true;
+
+  const remainingThresholds = [...allThresholds];
+  const remainingRegionThresholds = [...regionThresholds];
+
+  routeStore.tasks.forEach((task) => {
+    while (remainingThresholds.length > 0) {
+      const nextThreshold = remainingThresholds[0];
+      if (pointSum >= nextThreshold.points) {
+        if (props.showCompleted || !allPrecedingTasksCompleted) {
+          result.push({
+            type: "divider",
+            ...remainingThresholds.shift()!,
+          });
+        } else {
+          remainingThresholds.shift();
+        }
+      } else {
+        break;
+      }
+    }
+
+    while (remainingRegionThresholds.length > 0) {
+      const nextThreshold = remainingRegionThresholds[0];
+      if (taskCount >= nextThreshold.points) {
+        if (props.showCompleted || !allPrecedingTasksCompleted) {
+          result.push({
+            type: "divider",
+            ...remainingRegionThresholds.shift()!,
+          });
+        } else {
+          remainingRegionThresholds.shift();
+        }
+      } else {
+        break;
+      }
+    }
+
+    if (!task.completed) {
+      allPrecedingTasksCompleted = false;
+    }
+
+    if (props.showCompleted || !task.completed) {
+      result.push({ ...task, type: "task" } as TaskItem);
+    }
+
+    pointSum += task.reward;
+    taskCount++;
+  });
+
+  if (props.showCompleted || (!allPrecedingTasksCompleted || result.length == 0)) {
+    remainingThresholds.forEach((threshold) => {
+      result.push({
+        type: "divider",
+        ...threshold,
+      });
+    });
+
+    remainingRegionThresholds.forEach((threshold) => {
+      result.push({
+        type: "divider",
+        ...threshold,
+      });
+    });
+  }
+
+  return result;
+});
 
 const onDrop = (event: DragEvent) => {
   const item: Task = JSON.parse(
