@@ -1,33 +1,63 @@
-# leagues-planner
+# OSRS Leagues Route Planner
 
-This template should help get you started developing with Vue 3 in Vite.
+## Overview
+A Vue 3 application for planning and tracking routes in Old School RuneScape (OSRS) Leagues, built with Bun.
 
-## Recommended IDE Setup
+## Prerequisites
+- Bun 1.0+
+- Node.js (optional, for alternate package management)
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## Setup
 
-## Type Support for `.vue` Imports in TS
+### Installation
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+First clone and install the dependancies.
 
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
+```bash
+git clone https://github.com/yourusername/osrs-leagues-route-planner.git
+cd osrs-leagues-route-planner
 bun install
 ```
 
-### Compile and Hot-Reload for Development
+### Development
 
-```sh
-bun dev
+#### Running in Development Mode
+
+```bash
+# Start development server
+bun run dev
 ```
 
-### Type-Check, Compile and Minify for Production
+#### Building for production
 
-```sh
-bun build
+```bash
+# Build the application
+bun run build
+
+# Preview production build
+bun run preview
 ```
+
+### Customization
+
+#### Task Lists
+
+Multiple task lists are available in the `src/tasks` directory. You can modify the active task list in `src/stores/taskStore.ts`, for debugging/development it's advised to use the `tb-reloaded-tasks.json` for a fuller featured task set.
+
+#### Thresholds
+
+You can customize thresholds for:
+
+- Relics
+- Cup tiers
+- Regions
+
+Edit thresholds in `src/components/RouteList.vue` on lines 79-103:
+
+- `relicThresholds`: Define points and colors for relic unlocks
+- `tierThresholds`: Configure cup tier progression points
+- `regionThresholds`: Set point requirements for region progression
+
+#### To do
+
+- [ ] Add custom tasks (used for things like "Complete national history quiz." which aren't tasks but are important for the route.)
