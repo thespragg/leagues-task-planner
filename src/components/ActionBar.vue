@@ -24,10 +24,10 @@
         </div>
       </div>
     </div>
-    <div class="flex">
+    <div class="flex items-center">
       <Card class="mr-2">
         <template #content>
-          <div class="flex items-center">
+          <div class="flex items-center justify">
             <p>Points in Route:</p>
             <p class="text-lg font-bold ml-2">
               {{ routeStore.tasks.reduce((a, b) => a + b.reward, 0) }}
