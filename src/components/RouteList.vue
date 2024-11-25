@@ -18,6 +18,10 @@
           <li
             class="mt-1 px-4 py-1 w-11/12 border border-solid border-gray-300 rounded-lg cursor-pointer grid grid-cols-3"
             :class="item.completed ? 'bg-green-200/20' : 'bg-white'"
+            draggable="true"
+            @dragstart="onDragStart(item, index)"
+            @dragover.prevent
+            @drop="onDropReorder(index)"
           >
             <div class="flex items-center">
               <p>{{ item.name }}</p>
@@ -51,14 +55,33 @@
 </template>
 
 <script lang="ts" setup>
-import { computed } from "vue";
+import { ref, computed } from "vue";
 import { Tag, Button } from "primevue";
 import { useRouteStore } from "@/stores/routeStore";
-import type { ListItem, Task, TaskItem, ThresholdInfo } from "@/types";
 import TierDivider from "@/components/TierDivider.vue";
+import type { ListItem, Task, TaskItem, ThresholdInfo } from "@/types";
 
 const props = defineProps<{ showCompleted: boolean }>();
 const routeStore = useRouteStore();
+
+const draggedItem = ref<Task | null>(null);
+const draggedIndex = ref<number | null>(null);
+
+const onDragStart = (item: Task, index: number) => {
+  draggedItem.value = item;
+  draggedIndex.value = index;
+};
+
+const onDropReorder = (targetIndex: number) => {
+  if (draggedIndex.value !== null && draggedItem.value) {
+    const tasks = [...routeStore.tasks];
+    const [removed] = tasks.splice(draggedIndex.value, 1);
+    tasks.splice(targetIndex, 0, removed);
+    routeStore.updateTasks(tasks);
+  }
+  draggedItem.value = null;
+  draggedIndex.value = null;
+};
 
 const relicThresholds: ThresholdInfo[] = [
   { points: 500, name: "Relic 2", color: "#5a98e8" },
@@ -171,8 +194,8 @@ const onDrop = (event: DragEvent) => {
 };
 
 const tagColour = (value: number) => {
-  if (value == 10) return "success";
-  if (value == 30) return "warn";
+  if (value === 10) return "success";
+  if (value === 30) return "warn";
   return "danger";
 };
 </script>
