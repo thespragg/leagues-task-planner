@@ -34,10 +34,6 @@
                     <Button label="Submit" @click="handleSubmit" class="mt-2" />
                   </div>
                 </Dialog>
-
-                <div v-if="submittedText" class="mt-3">
-                  <strong>Submitted Text:</strong> {{ submittedText }}
-                </div>
               </div>
             </div>
           </div>

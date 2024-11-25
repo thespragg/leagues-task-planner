@@ -8,7 +8,7 @@ export const useRouteStore = defineStore("routes", () => {
   const addTask = (task: Task) => tasks.value.push(task);
 
   const removeTask = (task: Task) => {
-    const index = tasks.value.indexOf(task);
+    const index = tasks.value.findIndex((x) => x.id == task.id);
     if (index !== -1) {
       tasks.value = [
         ...tasks.value.slice(0, index),
@@ -33,10 +33,10 @@ export const useRouteStore = defineStore("routes", () => {
 
   const saveTasksToFile = () => {
     const tasksJson = JSON.stringify(tasks.value, null, 2);
-    const blob = new Blob([tasksJson], { type: 'application/json' });
-    const link = document.createElement('a');
+    const blob = new Blob([tasksJson], { type: "application/json" });
+    const link = document.createElement("a");
     link.href = URL.createObjectURL(blob);
-    link.download = 'osrs-route.json';
+    link.download = "osrs-route.json";
     link.click();
     URL.revokeObjectURL(link.href);
   };
@@ -48,8 +48,8 @@ export const useRouteStore = defineStore("routes", () => {
         const loadedTasks = JSON.parse(e.target?.result as string) as Task[];
         tasks.value = loadedTasks;
       } catch (error) {
-        console.error('Error loading tasks:', error);
-        alert('Failed to load tasks. Please check the file format.');
+        console.error("Error loading tasks:", error);
+        alert("Failed to load tasks. Please check the file format.");
       }
     };
     reader.readAsText(file);
@@ -63,6 +63,6 @@ export const useRouteStore = defineStore("routes", () => {
     completeTask,
     revertTask,
     saveTasksToFile,
-    loadTasksFromFile
+    loadTasksFromFile,
   };
 });

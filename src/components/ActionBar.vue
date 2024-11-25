@@ -1,30 +1,16 @@
 <template>
-  <div class="py-4 px-6 flex w-full items- justify-between">
+  <div class="grid grid-cols-3 py-4 px-6 w-full">
     <div class="flex items-center">
-      <div class="pr-6">
-        <div class="flex items-center space-x-4">
-          <div class="flex flex-col border border-gray-200 border-solid p-2 rounded-lg">
-            <Toast />
-            <FileUpload
-              ref="fileupload"
-              mode="basic"
-              name="taskFile"
-              url="upload"
-              accept=".json"
-              customUpload
-              @uploader="onFileUpload"
-              class="p-button-secondary"
-            />
-            <Button label="Load Route" @click="upload" class="mt-1"/>
-          </div>
-          <Button
-            label="Save Route"
-            @click="saveTasksToFile"
-          />
-        </div>
-      </div>
+      <Button
+        size="small"
+        icon="pi pi-info"
+        variant="text"
+        raised
+        rounded
+        aria-label="Cancel"
+      />
     </div>
-    <div class="flex items-center">
+    <div class="flex items-center justify-center">
       <Card class="mr-2">
         <template #content>
           <div class="flex items-center justify">
@@ -50,6 +36,26 @@
         </template>
       </Card>
     </div>
+    <div class="flex items-center justify-end">
+      <Toast />
+      <FileUpload
+        mode="basic"
+        name="routeFile"
+        accept=".json"
+        :maxFileSize="1000000"
+        @uploader="onFileUpload"
+        :auto="true"
+        chooseIcon="pi pi-folder"
+        chooseLabel="Load Route"
+        customUpload
+      />
+      <Button
+        icon="pi pi-save"
+        class="ml-2"
+        label="Save Route"
+        @click="saveTasksToFile"
+      />
+    </div>
   </div>
 </template>
 
@@ -70,8 +76,9 @@ const toast = useToast();
 const fileupload = ref();
 
 const upload = () => {
-  console.log("upload")
-  fileupload.value.upload()};
+  console.log("upload");
+  fileupload.value.upload();
+};
 
 const onFileUpload = (event: FileUploadUploaderEvent) => {
   const files = Array.isArray(event.files) ? event.files : [event.files];

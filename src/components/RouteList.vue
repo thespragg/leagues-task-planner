@@ -42,21 +42,33 @@
                   @click="routeStore.revertTask(item.id)"
                 ></Button>
               </div>
+              <Button
+                variant="outlined"
+                class="hover:!bg-red-200 ml-2"
+                icon="pi pi-trash"
+                @click="routeStore.removeTask(item)"
+                v-if="!item.completed"
+              ></Button>
             </div>
             <div class="flex flex-col items-center justify-center">
               <Button
+                size="small"
                 variant="outlined"
-                class="!p-1 hover:!bg-gray-200 h-6 text-sm mb-1"
+                class="!p-1 hover:!bg-gray-200 text-sm mb-1"
                 icon="pi pi-arrow-up"
                 @click="moveTask(index, -1)"
-                v-if="!(index === 0)"
+                v-if="index !== 0"
               ></Button>
               <Button
+                size="small"
                 variant="outlined"
-                class="!p-1 hover:!bg-gray-200 h-6 text-sm"
+                class="!p-1 hover:!bg-gray-200 text-sm"
                 icon="pi pi-arrow-down"
                 @click="moveTask(index, 1)"
-                v-if="!(index === tasksWithDividers.length - 1)"
+                v-if="
+                  index !== tasksWithDividers.length - 1 &&
+                  tasksWithDividers[index + 1].type !== 'divider'
+                "
               ></Button>
             </div>
           </li>
@@ -191,7 +203,8 @@ const moveTask = (index: number, direction: number) => {
     taskIndex === -1 ||
     (direction === -1 && index === 0) ||
     (direction === 1 && index === tasksWithDividers.value.length - 1)
-  ) return;
+  )
+    return;
 
   const targetTaskIndex = routeStore.tasks.findIndex(
     (_, i) =>
