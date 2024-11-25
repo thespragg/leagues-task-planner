@@ -1,5 +1,7 @@
 # OSRS Leagues Route Planner
 
+![Website](https://github.com/user-attachments/assets/f243943a-81cc-4c30-9fa8-adba363ecbef)
+
 ## Overview
 An application for planning and tracking routes in Old School RuneScape (OSRS) Leagues, built with Vue 3.
 
