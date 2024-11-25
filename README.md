@@ -1,7 +1,7 @@
 # OSRS Leagues Route Planner
 
 ## Overview
-A Vue 3 application for planning and tracking routes in Old School RuneScape (OSRS) Leagues, built with Bun.
+An application for planning and tracking routes in Old School RuneScape (OSRS) Leagues, built with Vue 3.
 
 ## Prerequisites
 - Bun 1.0+
