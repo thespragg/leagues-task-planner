@@ -1,92 +1,76 @@
 <template>
-  <div class="w-full flex-1 rounded-2xl" @dragover.prevent @drop="onDrop">
-    <ul class="target-list">
-      <template
-        v-for="(item, index) in tasksWithDividers"
-        :key="item.type === 'divider' ? `divider-${index}` : item.id"
-      >
-        <template v-if="item.type === 'divider'">
-          <li>
-            <TierDivider
-              :number="item.points"
-              :name="item.name"
-              :color="item.color"
-            />
-          </li>
-        </template>
-        <template v-else>
-          <li
-            class="mt-1 dark:text-gray-100 px-4 py-1 w-11/12 border border-solid dark:border-neutral-800 border-gray-300 rounded-lg cursor-pointer grid grid-cols-4"
-            :class="
-              item.completed
-                ? 'bg-green-200/20'
-                : 'bg-white dark:bg-neutral-900'
-            "
-          >
-            <div class="flex items-center">
-              <p>{{ item.name }}</p>
-            </div>
-            <div class="flex items-center justify-center">
-              <Tag :severity="tagColour(item.reward)">{{ item.reward }}</Tag>
-            </div>
-            <div class="flex items-center justify-center">
-              <div>
-                <Button
-                  variant="outlined"
-                  class="hover:!bg-green-200"
-                  icon="pi pi-check"
-                  @click="routeStore.completeTask(item.id)"
-                  v-if="!item.completed"
-                ></Button>
-                <Button
-                  v-else
-                  variant="outlined"
-                  class="hover:!bg-red-200"
-                  icon="pi pi-times"
-                  @click="routeStore.revertTask(item.id)"
-                ></Button>
-              </div>
-              <Button
-                variant="outlined"
-                class="hover:!bg-red-200 ml-2"
-                icon="pi pi-trash"
-                @click="routeStore.removeTask(item)"
-                v-if="!item.completed"
-              ></Button>
-            </div>
-            <div class="flex flex-col items-center justify-center">
-              <Button
-                size="small"
-                variant="outlined"
-                class="!p-1 hover:!bg-gray-200 text-sm mb-1"
-                icon="pi pi-arrow-up"
-                @click="moveTask(index, -1)"
-                v-if="index !== 0"
-              ></Button>
-              <Button
-                size="small"
-                variant="outlined"
-                class="!p-1 hover:!bg-gray-200 text-sm"
-                icon="pi pi-arrow-down"
-                @click="moveTask(index, 1)"
-                v-if="
-                  index !== tasksWithDividers.length - 1 &&
-                  tasksWithDividers[index + 1].type !== 'divider'
-                "
-              ></Button>
-            </div>
-          </li>
-        </template>
+  <draggable
+    class="w-full flex-1 rounded-2xl"
+    :list="tasksWithDividers"
+    group="tasks"
+    item-key="name"
+    @move="handleMove"
+    @update="handleUpdate"
+  >
+    <template #item="{ element }">
+      <template v-if="element.type === 'divider'">
+        <li>
+          <TierDivider
+            :number="element.points"
+            :name="element.name"
+            :color="element.color"
+          />
+        </li>
       </template>
-    </ul>
-  </div>
+      <template v-else>
+        <div
+          class="mt-1 dark:text-gray-100 px-4 py-1 w-11/12 border border-solid dark:border-neutral-800 border-gray-300 rounded-lg cursor-pointer grid grid-cols-4"
+          :class="
+            element.completed
+              ? 'bg-green-200/20'
+              : 'bg-white dark:bg-neutral-900'
+          "
+        >
+          <div class="flex items-center">
+            <p>{{ element.name }}</p>
+          </div>
+          <div class="flex items-center justify-center">
+            <Tag :severity="tagColour(element.reward)">{{
+              element.reward
+            }}</Tag>
+          </div>
+          <div class="flex items-center justify-center">
+            <div>
+              <Button
+                variant="outlined"
+                class="hover:!bg-green-200"
+                icon="pi pi-check"
+                @click="routeStore.completeTask(element.id)"
+                v-if="!element.completed"
+              ></Button>
+              <Button
+                v-else
+                variant="outlined"
+                class="hover:!bg-red-200"
+                icon="pi pi-times"
+                @click="routeStore.revertTask(element.id)"
+              ></Button>
+            </div>
+            <Button
+              variant="outlined"
+              class="hover:!bg-red-200 ml-2"
+              icon="pi pi-trash"
+              @click="routeStore.removeTask(element)"
+              v-if="!element.completed"
+            ></Button>
+          </div>
+        </div>
+      </template>
+    </template>
+  </draggable>
 </template>
 
-<script lang="ts" setup>
-import { computed, ref } from "vue";
+<script setup lang="ts">
+import draggable from "vuedraggable";
+import { computed } from "vue";
 import { Tag, Button } from "primevue";
 import { useRouteStore } from "@/stores/routeStore";
-import type { ListItem, Task, TaskItem, ThresholdInfo } from "@/types";
+import type { ListItem, TaskItem, ThresholdInfo } from "@/types";
 import TierDivider from "@/components/TierDivider.vue";
 
 const props = defineProps<{ showCompleted: boolean }>();
@@ -173,7 +157,7 @@ const tasksWithDividers = computed(() => {
     }
 
     pointSum += task.reward;
-    if(task.reward > 0) taskCount++;
+    if (task.reward > 0) taskCount++;
   });
 
   if (
@@ -198,48 +182,70 @@ const tasksWithDividers = computed(() => {
 
   return result;
 });
-const moveTask = (index: number, direction: number) => {
-  const taskIndex = routeStore.tasks.findIndex(
-    (task) => task.id === (tasksWithDividers.value[index] as TaskItem).id
-  );
-
-  if (
-    taskIndex === -1 ||
-    (direction === -1 && index === 0) ||
-    (direction === 1 && index === tasksWithDividers.value.length - 1)
-  )
-    return;
-
-  const targetTaskIndex = routeStore.tasks.findIndex(
-    (_, i) =>
-      i !== taskIndex &&
-      i > (direction === -1 ? taskIndex - 2 : taskIndex) &&
-      i < (direction === -1 ? taskIndex : taskIndex + 2) &&
-      tasksWithDividers.value.find(
-        (item) => item.type === "task" && item.id === routeStore.tasks[i].id
-      )
-  );
-
-  if (targetTaskIndex !== -1) {
-    const tasks = [...routeStore.tasks];
-    [tasks[taskIndex], tasks[targetTaskIndex]] = [
-      tasks[targetTaskIndex],
-      tasks[taskIndex],
-    ];
-    routeStore.tasks = tasks;
-  }
-};
-
-const onDrop = (event: DragEvent) => {
-  const item: Task = JSON.parse(
-    event.dataTransfer!.getData("application/json")
-  );
-  routeStore.addTask(item);
-};
 
 const tagColour = (value: number) => {
   if (value == 10) return "success";
   if (value == 30) return "warn";
   return "danger";
+};
+
+const handleMove = (evt: any) => {
+  const draggedItem = evt.dragged;
+
+  if (draggedItem.type === "divider") {
+    return false;
+  }
+
+  if (draggedItem.completed) {
+    return false;
+  }
+
+  return true;
+};
+
+const handleUpdate = (evt: any) => {
+  const { oldIndex, newIndex } = evt;
+
+  const oldIndexDividers = countTo(
+    tasksWithDividers.value,
+    oldIndex,
+    (x) => x.type == "divider"
+  );
+
+  const newIndexDividers = countTo(
+    tasksWithDividers.value,
+    oldIndex,
+    (x) => x.type == "divider"
+  );
+
+  const adjustedNewIndex = newIndex - newIndexDividers;
+  const movedItem = routeStore.tasks[oldIndex - oldIndexDividers];
+  const adjustedIndex = oldIndex - oldIndexDividers;
+
+  console.log({
+    movedItem,
+    adjustedIndex,
+    adjustedNewIndex,
+    actual: routeStore.tasks.findIndex((x) => x.id == movedItem.id),
+  });
+
+  routeStore.reorderTasks(
+    oldIndex - oldIndexDividers,
+    newIndex - newIndexDividers
+  );
+};
+
+const countTo = <T>(
+  arr: T[],
+  index: number,
+  predicate: (item: T) => boolean
+): number => {
+  let count = 0;
+  for (let i = 0; i <= index; i++) {
+    if (predicate(arr[i])) {
+      count++;
+    }
+  }
+  return count;
 };
 </script>
