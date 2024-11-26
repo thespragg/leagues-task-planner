@@ -39,7 +39,11 @@
         <div class="flex-1 overflow-y-auto p-4">
           <draggable
             v-model="filteredAndSortedTasks"
-            :group="{ name: 'tasks', pull: 'clone', put: false }"
+            :group="{
+              name: 'tasks',
+              pull: 'clone',
+              put: false,
+            }"
             item-key="name"
           >
             <template #item="{ element }">

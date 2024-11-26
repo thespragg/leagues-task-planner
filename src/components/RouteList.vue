@@ -2,8 +2,9 @@
   <draggable
     class="w-full flex-1 rounded-2xl"
     :list="tasksWithDividers"
-    group="tasks"
+    :group="{ name: 'tasks', put: true }"
     item-key="name"
+    @add="handleAdd"
     @move="handleMove"
     @update="handleUpdate"
   >
@@ -70,7 +71,7 @@ import draggable from "vuedraggable";
 import { computed } from "vue";
 import { Tag, Button } from "primevue";
 import { useRouteStore } from "@/stores/routeStore";
-import type { ListItem, TaskItem, ThresholdInfo } from "@/types";
+import type { ListItem, Task, TaskItem, ThresholdInfo } from "@/types";
 import TierDivider from "@/components/TierDivider.vue";
 
 const props = defineProps<{ showCompleted: boolean }>();
@@ -183,6 +184,23 @@ const tasksWithDividers = computed(() => {
   return result;
 });
 
+const handleAdd = (ev: any) => {
+  const { newIndex } = ev;
+
+  const newIndexDividers = countTo(
+    tasksWithDividers.value,
+    newIndex,
+    (x) => x.type == "divider"
+  );
+
+  const item = tasksWithDividers.value[newIndex] as Task;
+  routeStore.updateTasks([
+    ...routeStore.tasks.slice(0, newIndex - newIndexDividers),
+    item,
+    ...routeStore.tasks.slice(newIndex - newIndexDividers),
+  ]);
+};
+
 const tagColour = (value: number) => {
   if (value == 10) return "success";
   if (value == 30) return "warn";
@@ -214,20 +232,9 @@ const handleUpdate = (evt: any) => {
 
   const newIndexDividers = countTo(
     tasksWithDividers.value,
-    oldIndex,
+    newIndex,
     (x) => x.type == "divider"
   );
-
-  const adjustedNewIndex = newIndex - newIndexDividers;
-  const movedItem = routeStore.tasks[oldIndex - oldIndexDividers];
-  const adjustedIndex = oldIndex - oldIndexDividers;
-
-  console.log({
-    movedItem,
-    adjustedIndex,
-    adjustedNewIndex,
-    actual: routeStore.tasks.findIndex((x) => x.id == movedItem.id),
-  });
 
   routeStore.reorderTasks(
     oldIndex - oldIndexDividers,
