@@ -34,10 +34,9 @@
             <p>{{ element.name }}</p>
           </div>
           <div
-            v-if="element.reward != 0"
             class="flex items-center justify-center"
           >
-            <Tag :severity="tagColour(element.reward)">{{
+            <Tag  v-if="element.reward != 0" :severity="tagColour(element.reward)">{{
               element.reward
             }}</Tag>
           </div>
