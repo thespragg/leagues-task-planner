@@ -1,57 +1,68 @@
 <template>
-  <div
-    class="max-w-2xl mx-auto flex flex-col h-[calc(100vh-8rem)] w-1/3 bg-white rounded-2xl shadow-lg w-full max-w-2xl mx-auto flex flex-col"
+  <Card
+    class="mx-auto h-[calc(100vh-8rem)] dark:text-gray-100 w-1/3 dark:bg-neutral-700 bg-white rounded-2xl shadow-lg w-full max-w-2xl"
   >
-    <div class="p-4">
-      <h2 class="text-xl font-semibold">Task List</h2>
-      <div class="grid grid-cols-6 gap-2 mt-2">
-        <ToggleButton
-          v-for="(_, region) in taskStore.regionToggles"
-          :key="region"
-          v-model="regionModel[region]"
-          @change="() => taskStore.toggleRegion(Number(region))"
-        >
-          <template #default> <img :src="regionIcons[region]" /></template>
-        </ToggleButton>
-      </div>
+    <template #content>
+      <div class="flex flex-col h-[calc(100vh-10rem)]">
+        <div class="p-4">
+          <h2 class="text-xl font-semibold">Task List</h2>
+          <div class="grid grid-cols-6 gap-2 mt-2">
+            <ToggleButton
+              v-for="(_, region) in taskStore.regionToggles"
+              :key="region"
+              v-model="regionModel[region]"
+              @change="() => taskStore.toggleRegion(Number(region))"
+            >
+              <template #default> <img :src="regionIcons[region]" /></template>
+            </ToggleButton>
+          </div>
 
-      <div class="flex gap-2 mt-4">
-        <IconField class="w-full">
-          <InputIcon class="pi pi-search" />
-          <InputText v-model="searchQuery" placeholder="Search" class="w-full" />
-        </IconField>
-        <Select
-          v-model="selectedSort"
-          :options="sortOptions"
-          optionLabel="label"
-          placeholder="Sort by"
-          class="w-48"
-        />
-      </div>
-    </div>
+          <div class="flex gap-2 mt-4">
+            <IconField class="w-full">
+              <InputIcon class="pi pi-search" />
+              <InputText
+                v-model="searchQuery"
+                placeholder="Search"
+                class="w-full"
+              />
+            </IconField>
+            <Select
+              v-model="selectedSort"
+              :options="sortOptions"
+              optionLabel="label"
+              placeholder="Sort by"
+              class="w-48"
+            />
+          </div>
+        </div>
 
-    <div class="flex-1 overflow-y-auto p-4">
-      <div
-        v-for="task in filteredAndSortedTasks"
-        :key="task.name"
-        class="mt-1 p-2 border border-solid border-gray-300 rounded-lg cursor-pointer"
-        draggable="true"
-        @dragstart="onDragStart($event, task)"
-      >
-        <div class="flex items-center justify-between">
-          <p>{{ task.name }}</p>
-          <Tag :severity="tagColour(task.reward)">{{ task.reward }}</Tag>
-        </div>
-        <div v-if="task.requirements != 'N/A'" class="text-sm text-gray-600">
-          {{ task.requirements }}
+        <div class="flex-1 overflow-y-auto p-4">
+          <div
+            v-for="task in filteredAndSortedTasks"
+            :key="task.name"
+            class="mt-1 p-2 dark:bg-neutral-800 border border-solid border-gray-300 rounded-lg cursor-pointer"
+            draggable="true"
+            @dragstart="onDragStart($event, task)"
+          >
+            <div class="flex items-center justify-between">
+              <p>{{ task.name }}</p>
+              <Tag :severity="tagColour(task.reward)">{{ task.reward }}</Tag>
+            </div>
+            <div
+              v-if="task.requirements != 'N/A'"
+              class="text-sm text-gray-600 dark:text-gray-200"
+            >
+              {{ task.requirements }}
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
+    </template>
+  </Card>
 </template>
 
 <script lang="ts" setup>
-import { ToggleButton, Tag, InputText, Select } from "primevue";
+import { ToggleButton, Tag, InputText, Select, Card } from "primevue";
 import { useTaskStore } from "@/stores/taskStore";
 import { regionIcons } from "@/utils/regionIcons";
 import { computed, ref } from "vue";

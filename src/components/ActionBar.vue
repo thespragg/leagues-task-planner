@@ -3,7 +3,15 @@
   <div class="grid grid-cols-3 py-4 px-6 w-full">
     <div class="flex items-center">
       <InfoDialog />
-      <RoutesDialog/>
+      <Button
+        @click="() => darkMode.toggleDarkMode()"
+        icon="pi pi-sun"
+        variant="text"
+        raised
+        rounded
+        class="ml-2"
+      />
+      <RoutesDialog />
     </div>
     <div class="flex items-center justify-center">
       <Card class="mr-2">
@@ -69,13 +77,15 @@ import {
   type FileUploadUploaderEvent,
 } from "primevue";
 import { useToast } from "primevue/usetoast";
-import ConfirmDialog from 'primevue/confirmdialog';
+import ConfirmDialog from "primevue/confirmdialog";
 import { useConfirm } from "primevue/useconfirm";
 import InfoDialog from "./InfoDialog.vue";
 import RoutesDialog from "./RoutesDialog.vue";
+import { useDarkMode } from "@/composables/useDarkMode";
 
 const routeStore = useRouteStore();
 const toast = useToast();
+const darkMode = useDarkMode();
 
 const onFileUpload = (event: FileUploadUploaderEvent) => {
   const files = Array.isArray(event.files) ? event.files : [event.files];
@@ -93,21 +103,21 @@ const onFileUpload = (event: FileUploadUploaderEvent) => {
 const confirm = useConfirm();
 
 const confirmClear = () => {
-    confirm.require({
-        message: 'Are you sure you want to clear the route?',
-        header: 'Confirmation',
-        icon: 'pi pi-exclamation-triangle',
-        rejectProps: {
-            label: 'Cancel',
-            severity: 'secondary',
-            outlined: true
-        },
-        acceptProps: {
-            label: 'Clear'
-        },
-        accept: () => routeStore.clear(),
-        reject: () => {}
-    });
+  confirm.require({
+    message: "Are you sure you want to clear the route?",
+    header: "Confirmation",
+    icon: "pi pi-exclamation-triangle",
+    rejectProps: {
+      label: "Cancel",
+      severity: "secondary",
+      outlined: true,
+    },
+    acceptProps: {
+      label: "Clear",
+    },
+    accept: () => routeStore.clear(),
+    reject: () => {},
+  });
 };
 
 const saveTasksToFile = () => routeStore.saveTasksToFile();

@@ -70,7 +70,7 @@ app.use(PrimeVue, {
     preset: Noir,
     options: {
       prefix: "p",
-      darkModeSelector: "class",
+      darkModeSelector: ".dark",
       cssLayer: false,
     },
   },

@@ -16,8 +16,12 @@
         </template>
         <template v-else>
           <li
-            class="mt-1 px-4 py-1 w-11/12 border border-solid border-gray-300 rounded-lg cursor-pointer grid grid-cols-4"
-            :class="item.completed ? 'bg-green-200/20' : 'bg-white'"
+            class="mt-1 dark:text-gray-100 px-4 py-1 w-11/12 border border-solid dark:border-neutral-800 border-gray-300 rounded-lg cursor-pointer grid grid-cols-4"
+            :class="
+              item.completed
+                ? 'bg-green-200/20'
+                : 'bg-white dark:bg-neutral-900'
+            "
           >
             <div class="flex items-center">
               <p>{{ item.name }}</p>
