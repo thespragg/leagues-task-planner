@@ -173,7 +173,7 @@ const tasksWithDividers = computed(() => {
     }
 
     pointSum += task.reward;
-    taskCount++;
+    if(task.reward > 0) taskCount++;
   });
 
   if (
@@ -220,7 +220,6 @@ const moveTask = (index: number, direction: number) => {
       )
   );
 
-  // Swap tasks in the store
   if (targetTaskIndex !== -1) {
     const tasks = [...routeStore.tasks];
     [tasks[taskIndex], tasks[targetTaskIndex]] = [

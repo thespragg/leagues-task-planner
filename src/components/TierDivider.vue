@@ -10,7 +10,7 @@
         }"
       >
         <span>{{ name }}</span>
-        <span class="font-bold">{{ number.toLocaleString() }} pts</span>
+        <span class="font-bold">{{ number.toLocaleString() }} {{ name.includes("Region") ? 'tasks' : 'points'}}</span>
       </div>
     </div>
   </template>
