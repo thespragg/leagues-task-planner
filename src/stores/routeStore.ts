@@ -1,9 +1,9 @@
 import { type Task } from "@/types";
 import { defineStore } from "pinia";
-import { useLocalStorage } from "@vueuse/core"
+import { useLocalStorage } from "@vueuse/core";
 
 export const useRouteStore = defineStore("routes", () => {
-  const tasks = useLocalStorage<Task[]>('route', []);
+  const tasks = useLocalStorage<Task[]>("route", []);
 
   const addTask = (task: Task) => tasks.value.push(task);
 
@@ -55,7 +55,17 @@ export const useRouteStore = defineStore("routes", () => {
     reader.readAsText(file);
   };
 
-  const clear = () => tasks.value = [];
+  const loadTasksFromJson = (data: any) => {
+    try {
+      const loadedTasks = data as Task[];
+      tasks.value = loadedTasks;
+    } catch (error) {
+      console.error("Error loading tasks:", error);
+      alert("Failed to load tasks. Please check the file format.");
+    }
+  };
+
+  const clear = () => (tasks.value = []);
 
   return {
     tasks,
@@ -66,6 +76,7 @@ export const useRouteStore = defineStore("routes", () => {
     revertTask,
     saveTasksToFile,
     loadTasksFromFile,
-    clear
+    loadTasksFromJson,
+    clear,
   };
 });

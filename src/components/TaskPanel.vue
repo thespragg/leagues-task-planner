@@ -1,8 +1,8 @@
 <template>
   <div
-    class="h-full max-w-2xl mx-auto flex flex-col h-[calc(100vh-8rem)] w-1/3 bg-white rounded-2xl shadow-lg w-full max-w-2xl mx-auto flex flex-col"
+    class="max-w-2xl mx-auto flex flex-col h-[calc(100vh-8rem)] w-1/3 bg-white rounded-2xl shadow-lg w-full max-w-2xl mx-auto flex flex-col"
   >
-    <div class="p-4 border-b bg-white">
+    <div class="p-4">
       <h2 class="text-xl font-semibold">Task List</h2>
       <div class="grid grid-cols-6 gap-2 mt-2">
         <ToggleButton

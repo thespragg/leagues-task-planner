@@ -2,7 +2,8 @@
   <ConfirmDialog></ConfirmDialog>
   <div class="grid grid-cols-3 py-4 px-6 w-full">
     <div class="flex items-center">
-      <InfoDialog/>
+      <InfoDialog />
+      <RoutesDialog/>
     </div>
     <div class="flex items-center justify-center">
       <Card class="mr-2">
@@ -68,10 +69,10 @@ import {
   type FileUploadUploaderEvent,
 } from "primevue";
 import { useToast } from "primevue/usetoast";
-import { ref } from "vue";
 import ConfirmDialog from 'primevue/confirmdialog';
 import { useConfirm } from "primevue/useconfirm";
 import InfoDialog from "./InfoDialog.vue";
+import RoutesDialog from "./RoutesDialog.vue";
 
 const routeStore = useRouteStore();
 const toast = useToast();
@@ -82,7 +83,6 @@ const onFileUpload = (event: FileUploadUploaderEvent) => {
     routeStore.loadTasksFromFile(files[0]);
   }
   toast.add({
-
     severity: "success",
     summary: "Success",
     detail: "Loaded route successfully.",
