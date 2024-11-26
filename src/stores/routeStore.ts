@@ -67,6 +67,13 @@ export const useRouteStore = defineStore("routes", () => {
 
   const clear = () => (tasks.value = []);
 
+  const reorderTasks = (oldIndex: number, newIndex: number) => {
+    const innerTasks = [...tasks.value];
+    const [movedItem] = innerTasks.splice(oldIndex, 1);
+    innerTasks.splice(newIndex, 0, movedItem);
+    tasks.value = innerTasks;
+  }
+
   return {
     tasks,
     addTask,
@@ -78,5 +85,6 @@ export const useRouteStore = defineStore("routes", () => {
     loadTasksFromFile,
     loadTasksFromJson,
     clear,
+    reorderTasks
   };
 });

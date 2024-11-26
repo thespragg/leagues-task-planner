@@ -37,24 +37,40 @@
         </div>
 
         <div class="flex-1 overflow-y-auto p-4">
-          <div
-            v-for="task in filteredAndSortedTasks"
-            :key="task.name"
-            class="mt-1 p-2 dark:bg-neutral-800 border border-solid border-gray-300 rounded-lg cursor-pointer"
-            draggable="true"
-            @dragstart="onDragStart($event, task)"
+          <draggable
+            v-model="filteredAndSortedTasks"
+            :group="{
+              name: 'tasks',
+              pull: 'clone',
+              put: false,
+            }"
+            item-key="name"
           >
-            <div class="flex items-center justify-between">
-              <p>{{ task.name }}</p>
-              <Tag :severity="tagColour(task.reward)">{{ task.reward }}</Tag>
-            </div>
-            <div
-              v-if="task.requirements != 'N/A'"
-              class="text-sm text-gray-600 dark:text-gray-200"
-            >
-              {{ task.requirements }}
-            </div>
-          </div>
+            <template #item="{ element }">
+              <div
+                class="mt-1 dark:text-gray-100 p-2 dark:bg-neutral-800 border border-solid dark:border-neutral-800 border-gray-300 rounded-lg cursor-pointer"
+                :class="
+                  element.completed
+                    ? 'bg-green-200/20'
+                    : 'bg-white dark:bg-neutral-900'
+                "
+              >
+                <div class="flex items-center justify-between">
+                  <p>{{ element.name }}</p>
+                  <Tag :severity="tagColour(element.reward)">{{
+                    element.reward
+                  }}</Tag>
+                </div>
+                <div
+                  v-if="element.requirements != 'N/A'"
+                  class="text-sm text-gray-600 dark:text-gray-200"
+                >
+                  {{ element.requirements }}
+                </div>
+              </div>
+            </template>
+          </draggable>
+          <div v-for="task in filteredAndSortedTasks" :key="task.name"></div>
         </div>
       </div>
     </template>
@@ -62,14 +78,15 @@
 </template>
 
 <script lang="ts" setup>
+import draggable from "vuedraggable";
 import { ToggleButton, Tag, InputText, Select, Card } from "primevue";
 import { useTaskStore } from "@/stores/taskStore";
 import { regionIcons } from "@/utils/regionIcons";
 import { computed, ref } from "vue";
-import type { Task } from "@/types";
 import { useRouteStore } from "@/stores/routeStore";
 import IconField from "primevue/iconfield";
 import InputIcon from "primevue/inputicon";
+import type { Task } from "@/types";
 
 const taskStore = useTaskStore();
 const routeStore = useRouteStore();
@@ -88,15 +105,12 @@ const regionModel = computed({
   set: (_: unknown) => {},
 });
 
+const log = (val: string) => console.log(val);
+
 const tagColour = (value: number) => {
   if (value == 10) return "success";
   if (value == 30) return "warn";
   return "danger";
-};
-
-const onDragStart = (event: DragEvent, item: Task) => {
-  event.dataTransfer!.effectAllowed = "copy";
-  event.dataTransfer!.setData("application/json", JSON.stringify(item));
 };
 
 const tasks = computed(() =>
