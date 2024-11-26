@@ -20,9 +20,10 @@
       General/Karamja/Misthalin tasks are released, the rest will be added once
       they are released.</p>
       <hr />
-      <p>Version: <span class="font-bold">2.0.0</span></p>
+      <p>Version: <span class="font-bold">2.1.0</span></p>
       <p>Changelog:</p>
       <ul>
+        <li>- [2.1.0] Added routes dialog for loading community routes</li>
         <li>- [2.0.0] Added searching & ordering to task list</li>
         <li>- [1.0.0] Released initial version</li>
       </ul>
