@@ -48,7 +48,12 @@
           >
             <template #item="{ element }">
               <div
-                class="mt-1 p-2 dark:bg-neutral-800 border border-solid border-gray-300 rounded-lg cursor-pointer"
+                class="mt-1 dark:text-gray-100 p-2 dark:bg-neutral-800 border border-solid dark:border-neutral-800 border-gray-300 rounded-lg cursor-pointer"
+                :class="
+                  element.completed
+                    ? 'bg-green-200/20'
+                    : 'bg-white dark:bg-neutral-900'
+                "
               >
                 <div class="flex items-center justify-between">
                   <p>{{ element.name }}</p>

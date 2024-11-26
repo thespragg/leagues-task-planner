@@ -20,14 +20,14 @@
       </template>
       <template v-else>
         <div
-          class="mt-1 dark:text-gray-100 px-4 py-1 w-11/12 border border-solid dark:border-neutral-800 border-gray-300 rounded-lg cursor-pointer grid grid-cols-4"
+          class="mt-1 dark:text-gray-100 px-4 py-1 w-full border border-solid dark:border-neutral-800 border-gray-300 rounded-lg cursor-pointer grid grid-cols-6"
           :class="
             element.completed
               ? 'bg-green-200/20'
               : 'bg-white dark:bg-neutral-900'
           "
         >
-          <div class="flex items-center">
+          <div class="flex col-span-4 items-center">
             <p>{{ element.name }}</p>
           </div>
           <div class="flex items-center justify-center">
@@ -38,23 +38,26 @@
           <div class="flex items-center justify-center">
             <div>
               <Button
+                size="small"
                 variant="outlined"
-                class="hover:!bg-green-200"
+                class="hover:!bg-gray-700"
                 icon="pi pi-check"
                 @click="routeStore.completeTask(element.id)"
                 v-if="!element.completed"
               ></Button>
               <Button
                 v-else
+                size="small"
                 variant="outlined"
-                class="hover:!bg-red-200"
+                class="hover:!bg-gray-700"
                 icon="pi pi-times"
                 @click="routeStore.revertTask(element.id)"
               ></Button>
             </div>
             <Button
+              size="small"
               variant="outlined"
-              class="hover:!bg-red-200 ml-2"
+              class="hover:!bg-gray-700 ml-2"
               icon="pi pi-trash"
               @click="routeStore.removeTask(element)"
               v-if="!element.completed"
