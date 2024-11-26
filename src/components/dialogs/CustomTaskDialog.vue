@@ -125,7 +125,6 @@
           :label="task ? 'Update Task' : 'Create Custom Task'"
           @click="handleSubmit"
           class="mt-4"
-          :disabled="!capturedText.trim() || selectedTasks.length === 0"
         />
       </div>
     </Dialog>
