@@ -24,7 +24,8 @@ export const parseTasksJson = (jsonData: any): AreaTasks => {
       description: task.Description,
       reward: task.Reward,
       completed: false,
-      requirements: task.Requirements
+      requirements: task.Requirements,
+      children: []
     }));
   });
 

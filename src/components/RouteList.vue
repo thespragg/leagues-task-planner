@@ -20,17 +20,23 @@
       </template>
       <template v-else>
         <div
-          class="mt-1 dark:text-gray-100 px-4 py-1 w-full border border-solid dark:border-neutral-800 border-gray-300 rounded-lg cursor-pointer grid grid-cols-6"
-          :class="
+          class="mt-1 dark:text-gray-100 px-4 py-1 w-full border border-solid rounded-lg cursor-pointer grid grid-cols-6"
+          :class="[
             element.completed
               ? 'bg-green-200/20'
-              : 'bg-white dark:bg-neutral-900'
-          "
+              : 'bg-white dark:bg-neutral-900',
+            element.reward == 0 || element.children?.length > 0
+              ? 'border-yellow-300/20'
+              : 'dark:border-neutral-800 border-gray-300',
+          ]"
         >
           <div class="flex col-span-4 items-center">
             <p>{{ element.name }}</p>
           </div>
-          <div class="flex items-center justify-center">
+          <div
+            v-if="element.reward != 0"
+            class="flex items-center justify-center"
+          >
             <Tag :severity="tagColour(element.reward)">{{
               element.reward
             }}</Tag>
@@ -62,6 +68,7 @@
               @click="routeStore.removeTask(element)"
               v-if="!element.completed"
             ></Button>
+            <CustomTaskDialog :task="element" />
           </div>
         </div>
       </template>
@@ -76,6 +83,7 @@ import { Tag, Button } from "primevue";
 import { useRouteStore } from "@/stores/routeStore";
 import type { ListItem, Task, TaskItem, ThresholdInfo } from "@/types";
 import TierDivider from "@/components/TierDivider.vue";
+import CustomTaskDialog from "./dialogs/CustomTaskDialog.vue";
 
 const props = defineProps<{ showCompleted: boolean }>();
 const routeStore = useRouteStore();
@@ -161,7 +169,8 @@ const tasksWithDividers = computed(() => {
     }
 
     pointSum += task.reward;
-    if (task.reward > 0) taskCount++;
+    if (task.reward > 0)
+      taskCount += task.children?.length > 0 ? task.children.length : 1;
   });
 
   if (

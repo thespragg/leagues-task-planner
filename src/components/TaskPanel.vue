@@ -1,6 +1,6 @@
 <template>
   <Card
-    class="mx-auto h-[calc(100vh-8rem)] dark:text-gray-100 w-1/3 dark:bg-neutral-700 bg-white rounded-2xl shadow-lg w-full max-w-2xl"
+    class="mx-auto dark:text-gray-100 w-1/3 dark:bg-neutral-700 bg-white rounded-2xl shadow-lg w-full max-w-2xl"
   >
     <template #content>
       <div class="flex flex-col h-[calc(100vh-10rem)]">
@@ -49,11 +49,6 @@
             <template #item="{ element }">
               <div
                 class="mt-1 dark:text-gray-100 p-2 dark:bg-neutral-800 border border-solid dark:border-neutral-800 border-gray-300 rounded-lg cursor-pointer"
-                :class="
-                  element.completed
-                    ? 'bg-green-200/20'
-                    : 'bg-white dark:bg-neutral-900'
-                "
               >
                 <div class="flex items-center justify-between">
                   <p>{{ element.name }}</p>
@@ -70,7 +65,6 @@
               </div>
             </template>
           </draggable>
-          <div v-for="task in filteredAndSortedTasks" :key="task.name"></div>
         </div>
       </div>
     </template>
@@ -86,7 +80,6 @@ import { computed, ref } from "vue";
 import { useRouteStore } from "@/stores/routeStore";
 import IconField from "primevue/iconfield";
 import InputIcon from "primevue/inputicon";
-import type { Task } from "@/types";
 
 const taskStore = useTaskStore();
 const routeStore = useRouteStore();
@@ -105,8 +98,6 @@ const regionModel = computed({
   set: (_: unknown) => {},
 });
 
-const log = (val: string) => console.log(val);
-
 const tagColour = (value: number) => {
   if (value == 10) return "success";
   if (value == 30) return "warn";
@@ -115,7 +106,10 @@ const tagColour = (value: number) => {
 
 const tasks = computed(() =>
   taskStore.taskList.filter(
-    (j) => routeStore.tasks.findIndex((x) => x.id == j.id) == -1
+    (j) =>
+      routeStore.tasks.findIndex((x) => x.id == j.id) == -1 &&
+      routeStore.tasks.flatMap((x) => x.children).findIndex((x) => x == j.id) ==
+        -1
   )
 );
 

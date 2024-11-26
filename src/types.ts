@@ -5,6 +5,7 @@ export type Task = {
   reward: number;
   requirements: string;
   completed: boolean;
+  children: number[]
 };
 
 export type AreaTasks = {

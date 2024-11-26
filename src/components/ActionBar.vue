@@ -79,8 +79,8 @@ import {
 import { useToast } from "primevue/usetoast";
 import ConfirmDialog from "primevue/confirmdialog";
 import { useConfirm } from "primevue/useconfirm";
-import InfoDialog from "./InfoDialog.vue";
-import RoutesDialog from "./RoutesDialog.vue";
+import InfoDialog from "./dialogs/InfoDialog.vue";
+import RoutesDialog from "./dialogs/RoutesDialog.vue";
 import { useDarkMode } from "@/composables/useDarkMode";
 
 const routeStore = useRouteStore();

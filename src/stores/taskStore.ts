@@ -12,6 +12,10 @@ export const useTaskStore = defineStore("tasks", () => {
   const toggleRegion = (region: Region) =>
     (filteredRegions.value = toggleArrayItem(filteredRegions.value, region));
 
+  const hasRegionSelected = () => {
+    return Object.values(regionToggles.value).some((value) => value);
+  };
+
   const taskList = computed(() => {
     const res = [];
     for (const key of filteredRegions.value) {
@@ -31,6 +35,7 @@ export const useTaskStore = defineStore("tasks", () => {
   });
 
   return {
+    hasRegionSelected,
     toggleRegion,
     taskList,
     regionToggles,

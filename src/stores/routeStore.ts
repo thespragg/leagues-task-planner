@@ -17,6 +17,12 @@ export const useRouteStore = defineStore("routes", () => {
     }
   };
 
+  const updateTask = (task: Task) => {
+    const index = tasks.value.findIndex((x) => x.id == task.id);
+    if (index == -1) return;
+    tasks.value[index] = task;
+  }
+
   const updateTasks = (newTasks: Task[]) => (tasks.value = newTasks);
 
   const completeTask = (id: number) => {
@@ -85,6 +91,7 @@ export const useRouteStore = defineStore("routes", () => {
     loadTasksFromFile,
     loadTasksFromJson,
     clear,
-    reorderTasks
+    reorderTasks,
+    updateTask
   };
 });
