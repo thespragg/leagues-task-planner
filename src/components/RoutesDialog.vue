@@ -4,7 +4,6 @@
     icon="pi pi-map"
     variant="text"
     raised
-    rounded
     aria-label="Cancel"
     label="Routes"
     class="ml-2"
