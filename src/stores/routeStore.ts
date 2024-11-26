@@ -1,9 +1,10 @@
 import { type Task } from "@/types";
 import { defineStore } from "pinia";
 import { ref } from "vue";
+import { useLocalStorage } from "@vueuse/core"
 
 export const useRouteStore = defineStore("routes", () => {
-  const tasks = ref<Task[]>([]);
+  const tasks = useLocalStorage<Task[]>('route', []);
 
   const addTask = (task: Task) => tasks.value.push(task);
 
@@ -55,6 +56,8 @@ export const useRouteStore = defineStore("routes", () => {
     reader.readAsText(file);
   };
 
+  const clear = () => tasks.value = [];
+
   return {
     tasks,
     addTask,
@@ -64,5 +67,6 @@ export const useRouteStore = defineStore("routes", () => {
     revertTask,
     saveTasksToFile,
     loadTasksFromFile,
+    clear
   };
 });

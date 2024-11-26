@@ -1,4 +1,5 @@
 <template>
+  <ConfirmDialog></ConfirmDialog>
   <div class="grid grid-cols-3 py-4 px-6 w-full">
     <div class="flex items-center">
       <Button
@@ -56,6 +57,12 @@
         label="Save Route"
         @click="saveTasksToFile"
       />
+      <Button
+        icon="pi pi-times"
+        class="ml-2"
+        label="Clear Route"
+        @click="confirmClear"
+      />
     </div>
   </div>
   <Dialog
@@ -68,7 +75,7 @@
     <div class="flex flex-col gap-3">
       This is a tool for laying out a Raging Echoes route, currently only General/Karamja/Misthalin tasks are released, the rest will be added once they are released.
       <hr/>
-      <p>Version: <span class="font-bold">1.0.0</span></p>
+      <p>Version: <span class="font-bold">1.1.0</span></p>
       <p>Changelog:</p>
       <ul>
         <li> - Released initial version</li>
@@ -91,6 +98,8 @@ import {
 } from "primevue";
 import { useToast } from "primevue/usetoast";
 import { ref } from "vue";
+import ConfirmDialog from 'primevue/confirmdialog';
+import { useConfirm } from "primevue/useconfirm";
 
 const routeStore = useRouteStore();
 const toast = useToast();
@@ -109,7 +118,25 @@ const onFileUpload = (event: FileUploadUploaderEvent) => {
   });
 };
 
-const saveTasksToFile = () => {
-  routeStore.saveTasksToFile();
+const confirm = useConfirm();
+
+const confirmClear = () => {
+    confirm.require({
+        message: 'Are you sure you want to clear the route?',
+        header: 'Confirmation',
+        icon: 'pi pi-exclamation-triangle',
+        rejectProps: {
+            label: 'Cancel',
+            severity: 'secondary',
+            outlined: true
+        },
+        acceptProps: {
+            label: 'Clear'
+        },
+        accept: () => routeStore.clear(),
+        reject: () => {}
+    });
 };
+
+const saveTasksToFile = () => routeStore.saveTasksToFile();
 </script>
