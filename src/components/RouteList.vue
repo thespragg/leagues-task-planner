@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full" @dragover.prevent @drop="onDrop">
+  <div class="w-full flex-1 rounded-2xl" @dragover.prevent @drop="onDrop">
     <ul class="target-list">
       <template
         v-for="(item, index) in tasksWithDividers"

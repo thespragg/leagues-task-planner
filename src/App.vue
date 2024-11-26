@@ -4,12 +4,10 @@
     <header class="w-full">
       <ActionBar />
     </header>
-    <main
-      class="w-full min-h-[calc(100vh-8rem)] rounded-2xl"
-    >
+    <main class="w-full min-h-[calc(100vh-8rem)] rounded-2xl">
       <div class="flex gap-4 p-4 h-full">
         <Card
-          class="flex-1 flex flex-col bg-white rounded-2xl shadow-lg p-4 h-[calc(100vh-8rem)] overflow-y-auto"
+          class="flex-1 flex flex-col bg-white rounded-2xl shadow-lg p-4 h-[calc(100vh-8rem)]"
         >
           <template #content>
             <div class="flex justify-between items-center p-4">
@@ -50,10 +48,9 @@
                 <p class="ml-2">Show Completed</p>
               </div>
             </div>
-            <RouteList
-              :show-completed="showCompleted"
-              class="flex-1 rounded-2xl overflow-y-auto"
-            />
+            <div class="overflow-y-auto h-[calc(100vh-17rem)]">
+              <RouteList :show-completed="showCompleted" />
+            </div>
           </template>
         </Card>
 
