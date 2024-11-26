@@ -2,15 +2,7 @@
   <ConfirmDialog></ConfirmDialog>
   <div class="grid grid-cols-3 py-4 px-6 w-full">
     <div class="flex items-center">
-      <Button
-        @click="dialogVisible = true"
-        size="small"
-        icon="pi pi-info"
-        variant="text"
-        raised
-        rounded
-        aria-label="Cancel"
-      />
+      <InfoDialog/>
     </div>
     <div class="flex items-center justify-center">
       <Card class="mr-2">
@@ -39,7 +31,6 @@
       </Card>
     </div>
     <div class="flex items-center justify-end">
-      <Toast />
       <FileUpload
         mode="basic"
         name="routeFile"
@@ -65,25 +56,6 @@
       />
     </div>
   </div>
-  <Dialog
-    dismissable-mask
-    modal
-    header="Info"
-    v-model:visible="dialogVisible"
-    :style="{ width: '33vw' }"
-  >
-    <div class="flex flex-col gap-3">
-      This is a tool for laying out a Raging Echoes route, currently only General/Karamja/Misthalin tasks are released, the rest will be added once they are released.
-      <hr/>
-      <p>Version: <span class="font-bold">1.1.0</span></p>
-      <p>Changelog:</p>
-      <ul>
-        <li> - Released initial version</li>
-      </ul>
-      <hr/>
-      <p>Created by <a class="underline" href="https://github.com/thespragg">Alistair Spragg</a></p>
-    </div>
-  </Dialog>
 </template>
 
 <script lang="ts" setup>
@@ -93,17 +65,16 @@ import {
   Button,
   FileUpload,
   Toast,
-  Dialog,
   type FileUploadUploaderEvent,
 } from "primevue";
 import { useToast } from "primevue/usetoast";
 import { ref } from "vue";
 import ConfirmDialog from 'primevue/confirmdialog';
 import { useConfirm } from "primevue/useconfirm";
+import InfoDialog from "./InfoDialog.vue";
 
 const routeStore = useRouteStore();
 const toast = useToast();
-const dialogVisible = ref(false);
 
 const onFileUpload = (event: FileUploadUploaderEvent) => {
   const files = Array.isArray(event.files) ? event.files : [event.files];
@@ -111,6 +82,7 @@ const onFileUpload = (event: FileUploadUploaderEvent) => {
     routeStore.loadTasksFromFile(files[0]);
   }
   toast.add({
+
     severity: "success",
     summary: "Success",
     detail: "Loaded route successfully.",
@@ -140,3 +112,9 @@ const confirmClear = () => {
 
 const saveTasksToFile = () => routeStore.saveTasksToFile();
 </script>
+
+<style>
+.p-toast {
+  width: 100vh !important;
+}
+</style>

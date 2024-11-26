@@ -1,6 +1,5 @@
 import { type Task } from "@/types";
 import { defineStore } from "pinia";
-import { ref } from "vue";
 import { useLocalStorage } from "@vueuse/core"
 
 export const useRouteStore = defineStore("routes", () => {

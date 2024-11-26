@@ -5,6 +5,8 @@
 ## Overview
 An application for planning and tracking routes in Old School RuneScape (OSRS) Leagues, built with Vue 3.
 
+[https://thespragg.github.io/leagues-task-planner/](https://thespragg.github.io/leagues-task-planner/)
+
 ## Prerequisites
 - Bun 1.0+
 - Node.js (optional, for alternate package management)
