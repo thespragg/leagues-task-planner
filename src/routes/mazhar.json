@@ -1120,5 +1120,822 @@
     "completed": false,
     "requirements": "N/A",
     "children": []
+  },
+  {
+    "id": 0.6139778737143724,
+    "name": "Run west past stepping stones",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.5740021263036288,
+    "name": "Kill a moss giant using fire spells (UNLOCKS FIRST COMBAT MASTERY + 95% RUNE/AMMO SAVE)",
+    "description": "",
+    "reward": 10,
+    "completed": false,
+    "requirements": "N/A",
+    "children": [
+      61
+    ]
+  },
+  {
+    "id": 1783,
+    "name": "Scatter some Ashes",
+    "description": "Scatter some Ashes",
+    "reward": 10,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.5325996933578425,
+    "name": "Leagues tele to Karamja",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.25634827718391995,
+    "name": "Run north and buy 11 bananas",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 1800,
+    "name": "Eat a Banana",
+    "description": "Eat a Banana",
+    "reward": 10,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.674673988455496,
+    "name": "Run to Volcano & kill an imp using earth spells",
+    "description": "",
+    "reward": 10,
+    "completed": false,
+    "requirements": "N/A",
+    "children": [
+      1564
+    ]
+  },
+  {
+    "id": 0.6225513595065838,
+    "name": "Kill a lesser demon in the volcano using water spells",
+    "description": "",
+    "reward": 30,
+    "completed": false,
+    "requirements": "N/A",
+    "children": [
+      62
+    ]
+  },
+  {
+    "id": 650,
+    "name": "Defeat a TzHaar",
+    "description": "Defeat any TzHaar in Mor Ul Rek",
+    "reward": 30,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.5945385494528175,
+    "name": "Enter fight caves kill the bat, leave (diary)",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.2831942688350916,
+    "name": "Run to musa point and fill a crate with the 10 remaining bananas",
+    "description": "",
+    "reward": 10,
+    "completed": false,
+    "requirements": "N/A",
+    "children": [
+      675
+    ]
+  },
+  {
+    "id": 0.4195186376602924,
+    "name": "Pick 5 more bananas for diary then drop them",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.7162912937305042,
+    "name": "Stay at musa point fishing spot till the following fishing tasks are done",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 340,
+    "name": "Catch a Shrimp",
+    "description": "Catch Raw Shrimp while Fishing",
+    "reward": 10,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 342,
+    "name": "Catch an Anchovy",
+    "description": "Catch a Raw Anchovy whilst Fishing",
+    "reward": 10,
+    "completed": false,
+    "requirements": "15 Fishing",
+    "children": []
+  },
+  {
+    "id": 296,
+    "name": "Cook Shrimp",
+    "description": "Cook Raw Shrimp",
+    "reward": 10,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 1825,
+    "name": "Catch 25 Sardines",
+    "description": "Catch 25 Sardines",
+    "reward": 30,
+    "completed": false,
+    "requirements": "5 Fishing",
+    "children": []
+  },
+  {
+    "id": 341,
+    "name": "Catch a Herring",
+    "description": "Catch a Raw Herring whilst Fishing",
+    "reward": 10,
+    "completed": false,
+    "requirements": "10 Fishing",
+    "children": []
+  },
+  {
+    "id": 1826,
+    "name": "Cook 10 Sardines",
+    "description": "Cook 10 Raw Sardines",
+    "reward": 30,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 343,
+    "name": "Catch 100 Lobsters",
+    "description": "Catch 100 Raw Lobsters whilst Fishing",
+    "reward": 30,
+    "completed": false,
+    "requirements": "40 Fishing",
+    "children": []
+  },
+  {
+    "id": 300,
+    "name": "Cook 100 Lobsters",
+    "description": "Cook 100 Raw Lobsters",
+    "reward": 30,
+    "completed": false,
+    "requirements": "40 Cooking",
+    "children": []
+  },
+  {
+    "id": 344,
+    "name": "Catch 50 Swordfish",
+    "description": "Catch 50 Raw Swordfish whilst Fishing",
+    "reward": 30,
+    "completed": false,
+    "requirements": "50 Fishing",
+    "children": []
+  },
+  {
+    "id": 195,
+    "name": "Achieve Your First Level 30",
+    "description": "Reach level 30 in any skill",
+    "reward": 30,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 196,
+    "name": "Achieve Your First Level 40",
+    "description": "Reach level 40 in any skill",
+    "reward": 30,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 197,
+    "name": "Achieve Your First Level 50",
+    "description": "Reach level 50 in any skill",
+    "reward": 30,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 203,
+    "name": "Reach Total Level 100",
+    "description": "Reach a Total Level of 100",
+    "reward": 30,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.9694225414127963,
+    "name": "Leagues tele back to karamja",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.37580406163746694,
+    "name": "Take cart shortcut to shilo",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.9686569071878937,
+    "name": "Buy a torch + tinderbox from general store and light it",
+    "description": "",
+    "reward": 10,
+    "completed": false,
+    "requirements": "N/A",
+    "children": [
+      373
+    ]
+  },
+  {
+    "id": 0.7041407475726913,
+    "name": "Sell noted steel items from HAM members or spare food if needed",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.7573170407212726,
+    "name": "Buy and bank 25 bronze bars",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.3441444740472581,
+    "name": "go to fishing shop and buy 200 feathers, if need more gp take the banked raw food out of bank and sell it to shop",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.868474252360372,
+    "name": "Do the following fish tasks",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 1827,
+    "name": "Catch 10 Pike",
+    "description": "Catch 10 Pike",
+    "reward": 30,
+    "completed": false,
+    "requirements": "25 Fishing",
+    "children": []
+  },
+  {
+    "id": 1828,
+    "name": "Cook 20 Pike",
+    "description": "Cook 20 Raw Pike",
+    "reward": 30,
+    "completed": false,
+    "requirements": "20 Cooking",
+    "children": []
+  },
+  {
+    "id": 645,
+    "name": "Catch a Salmon on Karamja",
+    "description": "Catch a Salmon on Karamja",
+    "reward": 30,
+    "completed": false,
+    "requirements": "30 Fishing",
+    "children": []
+  },
+  {
+    "id": 345,
+    "name": "Catch 50 Salmon",
+    "description": "Catch 50 Raw Salmon whilst Fishing",
+    "reward": 30,
+    "completed": false,
+    "requirements": "30 Fishing",
+    "children": []
+  },
+  {
+    "id": 0.18914876438132766,
+    "name": "Sell more fish to general store for gp",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.3857188974441852,
+    "name": "bank everything but steel axe, coins, leather gloves, learther boots, rock pick, trowel, combat runes, hammer, stake, garlic. mith dagger, addy dagger + clue compass relic if achieved at this point",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 1529,
+    "name": "Sleep in Paramaya Inn",
+    "description": "Pay the barkeep to sleep in Paramaya Inn, in Shilo Village",
+    "reward": 30,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.11208659992094472,
+    "name": "Clue compass teleport to lumberyard (if possible) if not use chronicle",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 290,
+    "name": "Chop Some Logs With a Steel Axe",
+    "description": "Chop any kind of logs using a Steel Axe",
+    "reward": 10,
+    "completed": false,
+    "requirements": "6 Woodcutting",
+    "children": []
+  },
+  {
+    "id": 358,
+    "name": "Turn any Logs Into a Plank",
+    "description": "Use a Sawmill to turn Logs into a Plank",
+    "reward": 10,
+    "completed": false,
+    "requirements": "Logs and 100",
+    "children": []
+  },
+  {
+    "id": 0.34919631408349916,
+    "name": "Clue compass to exam centre (or run) and get a speciment jar from south wall cupboard",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.6599004389341364,
+    "name": "Get a panning tray and pan for a Jade",
+    "description": "",
+    "reward": 10,
+    "completed": false,
+    "requirements": "N/A",
+    "children": [
+      1327
+    ]
+  },
+  {
+    "id": 0.2866589998070814,
+    "name": "Dig the farthest north spot until belt buckle",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 1532,
+    "name": "Provide Terry a buckle",
+    "description": "Show Terry Balando in the Digsite a Belt Buckle",
+    "reward": 30,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.7837085383535528,
+    "name": "Clue compass to digsite",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 496,
+    "name": "Travel to Fossil Island",
+    "description": "Take the Museum Barge to Fossil Island",
+    "reward": 10,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 1143,
+    "name": "Pet the Museum Camp dog",
+    "description": "Pet the dog in the Museum Camp on Fossil Island",
+    "reward": 10,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.44791772318120704,
+    "name": "Clue compass to draynor",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 1313,
+    "name": "Get a chair to follow you",
+    "description": "Get a chair to follow you",
+    "reward": 10,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 503,
+    "name": "Complete Vampyre Slayer",
+    "description": "Complete the   Vampyre Slayer quest",
+    "reward": 30,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.9345467578682664,
+    "name": "equip mith + addy dagger",
+    "description": "",
+    "reward": 60,
+    "completed": false,
+    "requirements": "N/A",
+    "children": [
+      412,
+      413
+    ]
+  },
+  {
+    "id": 0.18752823616007208,
+    "name": "Leagues teleport to lumbridge",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.5971445927020768,
+    "name": "Kick a spider in the basement",
+    "description": "",
+    "reward": 10,
+    "completed": false,
+    "requirements": "N/A",
+    "children": [
+      1552
+    ]
+  },
+  {
+    "id": 0.29107891248867523,
+    "name": "Bank for a candle and tinderbox",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.6041347466172766,
+    "name": "Travel to dorgesh khaan and enter the city",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.09749705652179352,
+    "name": "Pickpocket a cave goblin until bullseye lantern",
+    "description": "",
+    "reward": 30,
+    "completed": false,
+    "requirements": "N/A",
+    "children": [
+      458
+    ]
+  },
+  {
+    "id": 0.09983553937117429,
+    "name": "Clue compass to varrock gypsy",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.5932230802879869,
+    "name": "Use the bronze bars to smith a bronze full helm & bronze plateskirt",
+    "description": "",
+    "reward": 20,
+    "completed": false,
+    "requirements": "N/A",
+    "children": [
+      1373,
+      1374
+    ]
+  },
+  {
+    "id": 204,
+    "name": "Reach Total Level 250",
+    "description": "Reach a Total Level of 250",
+    "reward": 30,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.5414322026038141,
+    "name": "Clue compass to edgeville & go to soul wars",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.8214218147561781,
+    "name": "Take out steel pickaxe from ham members + dramen staff + air staff + mind runes and run south to soulwars mine",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 303,
+    "name": "Mine some Copper Ore",
+    "description": "Mine some Copper Ore",
+    "reward": 10,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 1371,
+    "name": "Mine 5 Tin Ore",
+    "description": "Mine 5 Tin Ore",
+    "reward": 10,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 306,
+    "name": "Mine 50 Iron Ore",
+    "description": "Mine 50 Iron Ore",
+    "reward": 30,
+    "completed": false,
+    "requirements": "15 Mining",
+    "children": []
+  },
+  {
+    "id": 1372,
+    "name": "Mine 15 coal",
+    "description": "Mine 15 coal",
+    "reward": 30,
+    "completed": false,
+    "requirements": "30 Mining",
+    "children": []
+  },
+  {
+    "id": 0.2947071613209318,
+    "name": "Keep mining iron until 40 mining",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.5701668499905672,
+    "name": "Clue compass to enchanted valley and then fairy ring to bjp",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.9987079492918607,
+    "name": "Run far west and pick up bird snare",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.21786179115181947,
+    "name": "Run further west and kill 5 rabbits",
+    "description": "",
+    "reward": 30,
+    "completed": false,
+    "requirements": "N/A",
+    "children": [
+      1580
+    ]
+  },
+  {
+    "id": 0.7081752973873637,
+    "name": "Catch copper longtail to the south east",
+    "description": "",
+    "reward": 10,
+    "completed": false,
+    "requirements": "N/A",
+    "children": [
+      380
+    ]
+  },
+  {
+    "id": 0.896393643980633,
+    "name": "Leagues teleport to karamja and  run west",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.9764050144713469,
+    "name": "Mine some gold ore (diary)",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.21571533236267115,
+    "name": "Use the rope swing (diary)",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.37833682711531624,
+    "name": "Clue compass to enchanted valley",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.29976288333345824,
+    "name": "Fairy ring to CKR and run west and pick up/drop seaweed 5 times (dairy)",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.25534829921477353,
+    "name": "Cross to cairn island (dairy)",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.12662953506564367,
+    "name": "Clue compass to Tai bwo wannai and go to the dungeon to the north and kill a jogre (diary)",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.5755520701219474,
+    "name": "League teleport to karamja and claim diary lamp on prayer for 16k prayer xp and 32 prayer",
+    "description": "",
+    "reward": 30,
+    "completed": false,
+    "requirements": "N/A",
+    "children": [
+      671
+    ]
+  },
+  {
+    "id": 0.992000496934083,
+    "name": "Turn on a prayer to let prayer drain",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.7196407316840594,
+    "name": "Clue compass to varrock gypsy",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.9951921446068946,
+    "name": "[If fremmy] Go to varrock museum upstairs & claim lamps and dump it on prayer",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.2869208884881247,
+    "name": "[If fremmy] Turn on super human str and improved reflexes ",
+    "description": "",
+    "reward": 10,
+    "completed": false,
+    "requirements": "N/A",
+    "children": [
+      95
+    ]
+  },
+  {
+    "id": 0.06279830166393385,
+    "name": "[If fremmy] Use protect from melee",
+    "description": "",
+    "reward": 30,
+    "completed": false,
+    "requirements": "N/A",
+    "children": [
+      387
+    ]
+  },
+  {
+    "id": 0.04882682937823846,
+    "name": "Pray at the church",
+    "description": "",
+    "reward": 10,
+    "completed": false,
+    "requirements": "N/A",
+    "children": [
+      94
+    ]
   }
 ]
