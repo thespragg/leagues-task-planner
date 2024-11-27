@@ -41,6 +41,7 @@ import {
   useConfirm,
 } from "primevue";
 import mazhar from "@/routes/mazhar.json";
+import doubleshine from "@/routes/doubleshine.json";
 import { DataTable, Column } from "primevue";
 import { useRouteStore } from "@/stores/routeStore";
 
@@ -75,6 +76,11 @@ const routes = [
     data: mazhar,
     author: "Mazhar (Route designed for Animal Wrangler + Dodgy Dealer)",
     points: mazhar.reduce((a, b) => a + b.reward, 0),
+  },
+  {
+    data: doubleshine,
+    author: "Doubleshine",
+    points: doubleshine.reduce((a, b) => a + b.reward, 0),
   }
 ];
 
