@@ -1,7 +1,7 @@
 import { Region, type AreaTasks } from "@/types";
 import { defineStore } from "pinia";
 import { computed, ref } from "vue";
-import tasksData from "@/tasks/raging-echoes-tasks.json";
+import tasksData from "@/tasks/raging-echoes-tasks-full.json";
 import { parseTasksJson } from "@/utils/taskParser";
 import { toggleArrayItem } from "@/utils/toggleArrayItem";
 
