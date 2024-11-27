@@ -40,7 +40,6 @@ import {
   type DataTableRowClickEvent,
   useConfirm,
 } from "primevue";
-import myRoute from "@/routes/1100 pts.json";
 import mazhar from "@/routes/mazhar.json";
 import { DataTable, Column } from "primevue";
 import { useRouteStore } from "@/stores/routeStore";
@@ -76,12 +75,7 @@ const routes = [
     data: mazhar,
     author: "Mazhar (Route designed for Animal Wrangler + Dodgy Dealer)",
     points: mazhar.reduce((a, b) => a + b.reward, 0),
-  },
-  {
-    data: myRoute,
-    author: "thespragg (Heavily influenced by DoubleShines route)",
-    points: myRoute.reduce((a, b) => a + b.reward, 0),
-  },
+  }
 ];
 
 const formatPoints = (points: number) => points.toLocaleString();
