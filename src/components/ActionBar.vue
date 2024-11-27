@@ -14,7 +14,7 @@
       <RoutesDialog />
     </div>
     <div class="flex items-center justify-center">
-      <Card>
+      <Card class="mr-2 h-28 flex items-center justify-center">
         <template #content>
           <div class="flex items-center">
             <p>Tasks In Route:</p>
@@ -30,7 +30,7 @@
           </div>
         </template>
       </Card>
-      <Card>
+      <Card class="mr-2 h-28 flex items-center justify-center">
         <template #content>
           <div class="flex items-center">
             <p>Tasks Completed:</p>
@@ -49,7 +49,7 @@
           </div>
         </template>
       </Card>
-      <Card class="mr-2">
+      <Card class="mr-2 h-28 flex items-center justify-center">
         <template #content>
           <div class="flex items-center justify">
             <p>Points in Route:</p>
@@ -59,7 +59,7 @@
           </div>
         </template>
       </Card>
-      <Card>
+      <Card class="h-28 flex items-center justify-center">
         <template #content>
           <div class="flex items-center">
             <p>Points Completed:</p>
