@@ -1,7 +1,7 @@
 <template>
   <ConfirmDialog></ConfirmDialog>
-  <div class="grid grid-cols-3 py-4 px-6 w-full">
-    <div class="flex items-center">
+  <div class="grid grid-cols-6 py-4 px-6 w-full">
+    <div class="flex flex-col lg:flex-row items-center">
       <InfoDialog />
       <Button
         @click="() => darkMode.toggleDarkMode()"
@@ -13,73 +13,65 @@
       />
       <RoutesDialog />
     </div>
-    <div class="flex items-center justify-center">
-      <Card class="mr-2 h-28 flex items-center justify-center text-center">
+    <div class="flex items-center justify-center col-span-4 lg:col-span-3 p-6 text-xs lg:text-base">
+      <Card class="mr-2 h-24 lg:h-28 text-center w-full">
         <template #content>
-          <div class="w-32 flex items-center flex-col">
-            <p>Tasks In Route:</p>
-            <p class="text-lg font-bold ml-2">
-              {{
-                routeStore.tasks.reduce(
-                  (a, b) =>
-                    a + ((b.children || []).length > 0 ? b.children.length : 1),
-                  0
-                )
-              }}
-            </p>
-          </div>
-        </template>
-      </Card>
-      <Card class="mr-2 h-28 flex items-center justify-center text-center">
-        <template #content>
-          <div class="w-32 flex items-center flex-col">
-            <p>Tasks Completed:</p>
-            <p class="text-lg font-bold ml-2">
-              {{
-                routeStore.tasks
-                  .filter((x) => x.completed && x.reward != 0)
-                  .reduce(
+          <div class="grid grid-cols-4">
+            <div class="flex items-center flex-col">
+              <p class="h-1/2">Tasks In Route:</p>
+              <p class="text-lg h-1/2 font-bold ml-2">
+                {{
+                  routeStore.tasks.reduce(
                     (a, b) =>
                       a +
                       ((b.children || []).length > 0 ? b.children.length : 1),
                     0
                   )
-              }}
-            </p>
-          </div>
-        </template>
-      </Card>
-      <Card class="mr-2 h-28 flex items-center justify-center text-center">
-        <template #content>
-          <div class="w-32 flex items-center flex-col">
-            <p>Points in Route:</p>
-            <p class="text-lg font-bold ml-2">
-              {{ routeStore.tasks.reduce((a, b) => a + b.reward, 0) }}
-            </p>
-          </div>
-        </template>
-      </Card>
-      <Card class="h-28 flex items-center justify-center text-center">
-        <template #content>
-          <div class="w-32 flex items-center flex-col">
-            <p>Points Completed:</p>
-            <p class="text-lg font-bold ml-2">
-              {{
-                routeStore.tasks
-                  .filter((x) => x.completed)
-                  .reduce((a, b) => a + b.reward, 0)
-              }}
-            </p>
+                }}
+              </p>
+            </div>
+            <div class="flex items-center flex-col">
+              <p class="h-1/2">Tasks Done:</p>
+              <p class="text-lg h-1/2 font-bold ml-2">
+                {{
+                  routeStore.tasks
+                    .filter((x) => x.completed && x.reward != 0)
+                    .reduce(
+                      (a, b) =>
+                        a +
+                        ((b.children || []).length > 0 ? b.children.length : 1),
+                      0
+                    )
+                }}
+              </p>
+            </div>
+            <div class="flex items-center flex-col">
+              <p class="h-1/2">Points in Route:</p>
+              <p class="text-lg h-1/2 font-bold ml-2">
+                {{ routeStore.tasks.reduce((a, b) => a + b.reward, 0) }}
+              </p>
+            </div>
+            <div class="flex items-center flex-col">
+              <p class="h-1/2">Points Done:</p>
+              <p class="text-lg h-1/2 font-bold ml-2">
+                {{
+                  routeStore.tasks
+                    .filter((x) => x.completed)
+                    .reduce((a, b) => a + b.reward, 0)
+                }}
+              </p>
+            </div>
           </div>
         </template>
       </Card>
     </div>
-    <div class="flex items-center justify-end">
+    <div class="flex flex-col lg:flex-row items-center justify-end col-span-1 lg:col-span-2">
       <FileUpload
         mode="basic"
         name="routeFile"
         accept=".json"
         :maxFileSize="1000000"
+        class="h-10 lg:!h-12 text-xs"
         @uploader="onFileUpload"
         :auto="true"
         chooseIcon="pi pi-folder"
@@ -88,13 +80,13 @@
       />
       <Button
         icon="pi pi-save"
-        class="ml-2"
+        class="h-10 mt-1 lg:ml-2 lg:!h-12 text-xs"
         label="Save Route"
         @click="saveTasksToFile"
       />
       <Button
         icon="pi pi-times"
-        class="ml-2"
+        class="h-10 mt-1 lg:ml-2 lg:!h-12 text-xs"
         label="Clear Route"
         @click="confirmClear"
       />
