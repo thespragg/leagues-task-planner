@@ -12,10 +12,8 @@
           <template #content>
             <div class="flex justify-between items-center p-4">
               <div class="flex items-center mb-4 dark:text-gray-100">
-                <h2 class="text-xl font-bold">Route</h2>
-                <div>
-                 <CustomTaskDialog />
-                </div>
+                <h2 class="text-xl font-bold mr-4">Route</h2>
+                <CustomTaskDialog />
               </div>
               <div class="flex items-center justify-around">
                 <Checkbox v-model="showCompleted" binary />
@@ -28,23 +26,18 @@
           </template>
         </Card>
 
-        <TaskPanel class="h-[calc(100vh-8rem)]"/>
+        <TaskPanel class="h-[calc(100vh-8rem)]" />
       </div>
     </main>
   </div>
 </template>
 
 <script setup lang="ts">
-import {
-  Checkbox,
-  useToast,
-  Toast,
-  Card,
-} from "primevue";
+import { Checkbox, useToast, Toast, Card } from "primevue";
 import ActionBar from "./components/ActionBar.vue";
 import RouteList from "./components/RouteList.vue";
 import TaskPanel from "./components/TaskPanel.vue";
-import { onMounted, ref } from "vue";
+import { ref } from "vue";
 import CustomTaskDialog from "./components/dialogs/CustomTaskDialog.vue";
 
 const showCompleted = ref(false);

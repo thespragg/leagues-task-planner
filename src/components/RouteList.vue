@@ -33,36 +33,34 @@
           <div class="flex col-span-4 items-center">
             <p>{{ element.name }}</p>
           </div>
-          <div
-            class="flex items-center justify-center"
-          >
-            <Tag  v-if="element.reward != 0" :severity="tagColour(element.reward)">{{
-              element.reward
-            }}</Tag>
-          </div>
           <div class="flex items-center justify-center">
-            <div>
-              <Button
-                size="small"
-                variant="outlined"
-                class="hover:!bg-gray-700"
-                icon="pi pi-check"
-                @click="routeStore.completeTask(element.id)"
-                v-if="!element.completed"
-              ></Button>
-              <Button
-                v-else
-                size="small"
-                variant="outlined"
-                class="hover:!bg-gray-700"
-                icon="pi pi-times"
-                @click="routeStore.revertTask(element.id)"
-              ></Button>
-            </div>
+            <Tag
+              v-if="element.reward != 0"
+              :severity="tagColour(element.reward)"
+              >{{ element.reward }}</Tag
+            >
+          </div>
+          <div class="grid grid-cols-3 gap-2 w-32">
             <Button
               size="small"
               variant="outlined"
-              class="hover:!bg-gray-700 ml-2"
+              class="hover:!bg-gray-700"
+              icon="pi pi-check"
+              @click="routeStore.completeTask(element.id)"
+              v-if="!element.completed"
+            ></Button>
+            <Button
+              v-else
+              size="small"
+              variant="outlined"
+              class="hover:!bg-gray-700"
+              icon="pi pi-times"
+              @click="routeStore.revertTask(element.id)"
+            ></Button>
+            <Button
+              size="small"
+              variant="outlined"
+              class="hover:!bg-gray-700"
               icon="pi pi-trash"
               @click="routeStore.removeTask(element)"
               v-if="!element.completed"

@@ -1,11 +1,16 @@
 <template>
   <Card
     class="mx-auto dark:text-gray-100 w-1/3 dark:bg-neutral-700 bg-white rounded-2xl shadow-lg w-full max-w-2xl"
+    :class="(hidePanel ? '!w-12 flex items-center' : 'w-full')"
   >
     <template #content>
-      <div class="flex flex-col h-[calc(100vh-10rem)]">
+      <div v-if="hidePanel" @click="() => hidePanel = false"><i class="pi pi-bars"></i></div>
+      <div v-else class="flex flex-col h-[calc(100vh-10rem)]">
         <div class="p-4">
-          <h2 class="text-xl font-semibold">Task List</h2>
+          <div class="flex items-center justify-between">
+            <h2 class="text-xl font-semibold">Task List</h2>
+            <i @click="() => hidePanel = true" class="pi pi-bars"></i>
+          </div>
           <div class="grid grid-cols-6 gap-2 mt-2">
             <ToggleButton
               v-for="(_, region) in taskStore.regionToggles"
@@ -81,6 +86,7 @@ import { useRouteStore } from "@/stores/routeStore";
 import IconField from "primevue/iconfield";
 import InputIcon from "primevue/inputicon";
 
+const hidePanel = ref(false)
 const taskStore = useTaskStore();
 const routeStore = useRouteStore();
 const searchQuery = ref("");

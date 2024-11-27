@@ -1,5 +1,5 @@
 <template>
-  <div v-if="!task || (task && (task.children?.length > 0 || task.reward == 0))" class="card flex justify-content-center text-xs ml-2">
+  <div v-if="!task || (task && (task.children?.length > 0 || task.reward == 0))" class="card flex justify-content-center" size="small">
     <Button
       v-if="task"
       size="small"
