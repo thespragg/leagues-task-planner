@@ -17,6 +17,7 @@
               :key="region"
               v-model="regionModel[region]"
               @change="() => taskStore.toggleRegion(Number(region))"
+              v-tooltip.bottom="Region[region]"
             >
               <template #default> <img :src="regionIcons[region]" /></template>
             </ToggleButton>
@@ -84,6 +85,7 @@ import { regionIcons } from "@/utils/regionIcons";
 import { computed, ref } from "vue";
 import { useRouteStore } from "@/stores/routeStore";
 import IconField from "primevue/iconfield";
+import { Region } from "@/types"
 import InputIcon from "primevue/inputicon";
 
 const hidePanel = ref(false)
