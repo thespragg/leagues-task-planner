@@ -11,11 +11,11 @@
         >
           <template #content>
             <div class="flex justify-between items-center p-4">
-              <div class="flex items-center mb-4 dark:text-gray-100">
+              <div class="flex items-center dark:text-gray-100 w-2/3">
                 <h2 class="text-xl font-bold mr-4">Route</h2>
                 <CustomTaskDialog />
               </div>
-              <div class="flex items-center justify-around">
+              <div class="flex items-center justify-around w-1/3">
                 <Checkbox v-model="showCompleted" binary />
                 <p class="ml-2">Show Completed</p>
               </div>

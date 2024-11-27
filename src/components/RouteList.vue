@@ -20,7 +20,7 @@
       </template>
       <template v-else>
         <div
-          class="mt-1 dark:text-gray-100 px-4 py-1 w-full border border-solid rounded-lg cursor-pointer grid grid-cols-6"
+          class="mt-1 dark:text-gray-100 px-4 py-1 w-full border border-solid rounded-lg cursor-pointer grid grid-cols-5 lg:grid-cols-6 grid-rows-2 lg:grid-rows-none"
           :class="[
             element.completed
               ? 'bg-green-200/20'
@@ -44,7 +44,7 @@
             <Button
               size="small"
               variant="outlined"
-              class="hover:!bg-gray-700"
+              class="hover:!bg-gray-700 !h-8"
               icon="pi pi-check"
               @click="routeStore.completeTask(element.id)"
               v-if="!element.completed"
@@ -53,14 +53,14 @@
               v-else
               size="small"
               variant="outlined"
-              class="hover:!bg-gray-700"
+              class="hover:!bg-gray-700 !h-8"
               icon="pi pi-times"
               @click="routeStore.revertTask(element.id)"
             ></Button>
             <Button
               size="small"
               variant="outlined"
-              class="hover:!bg-gray-700"
+              class="hover:!bg-gray-700 !h-8"
               icon="pi pi-trash"
               @click="routeStore.removeTask(element)"
               v-if="!element.completed"

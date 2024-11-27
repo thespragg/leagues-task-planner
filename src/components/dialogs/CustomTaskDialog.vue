@@ -1,17 +1,22 @@
 <template>
-  <div v-if="!task || (task && (task.children?.length > 0 || task.reward == 0))" class="card flex justify-content-center" size="small">
+  <div
+    v-if="!task || (task && (task.children?.length > 0 || task.reward == 0))"
+    class="card flex items-center justify-center !h-8"
+    size="small"
+  >
     <Button
       v-if="task"
       size="small"
       variant="outlined"
-      class="hover:!bg-gray-700 h-9"
+      class="hover:!bg-gray-700 h-8"
       icon="pi pi-pencil"
       @click="openDialog"
     ></Button>
     <Button
       v-else
       label="Custom Task"
-      icon='pi pi-pencil'
+      class="h-10 lg:!h-12 text-xs"
+      icon="pi pi-pencil"
       @click="openDialog"
     />
 
@@ -215,26 +220,26 @@ const openDialog = () => {
 };
 
 const handleSubmit = () => {
-    const taskData = {
-      id: props.task?.id ?? Math.random(),
-      name: capturedText.value,
-      description: props.task?.description ?? "",
-      reward: totalReward.value,
-      completed: props.task?.completed ?? false,
-      requirements: props.task?.requirements ?? "N/A",
-      children: selectedTasks.value.map((x) => x.id),
-    };
+  const taskData = {
+    id: props.task?.id ?? Math.random(),
+    name: capturedText.value,
+    description: props.task?.description ?? "",
+    reward: totalReward.value,
+    completed: props.task?.completed ?? false,
+    requirements: props.task?.requirements ?? "N/A",
+    children: selectedTasks.value.map((x) => x.id),
+  };
 
-    if (props.task) {
-      routeStore.updateTask(taskData);
-    } else {
-      routeStore.addTask(taskData);
-    }
+  if (props.task) {
+    routeStore.updateTask(taskData);
+  } else {
+    routeStore.addTask(taskData);
+  }
 
-    dialogVisible.value = false;
-    capturedText.value = "";
-    selectedTasks.value = [];
-    searchQuery.value = "";
+  dialogVisible.value = false;
+  capturedText.value = "";
+  selectedTasks.value = [];
+  searchQuery.value = "";
 };
 
 const tagColour = (value: number) => {
