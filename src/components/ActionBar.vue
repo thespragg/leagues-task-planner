@@ -14,9 +14,9 @@
       <RoutesDialog />
     </div>
     <div class="flex items-center justify-center">
-      <Card class="mr-2 h-28 flex items-center justify-center">
+      <Card class="mr-2 h-28 flex items-center justify-center text-center">
         <template #content>
-          <div class="flex items-center">
+          <div class="w-32 flex items-center flex-col">
             <p>Tasks In Route:</p>
             <p class="text-lg font-bold ml-2">
               {{
@@ -30,9 +30,9 @@
           </div>
         </template>
       </Card>
-      <Card class="mr-2 h-28 flex items-center justify-center">
+      <Card class="mr-2 h-28 flex items-center justify-center text-center">
         <template #content>
-          <div class="flex items-center">
+          <div class="w-32 flex items-center flex-col">
             <p>Tasks Completed:</p>
             <p class="text-lg font-bold ml-2">
               {{
@@ -49,9 +49,9 @@
           </div>
         </template>
       </Card>
-      <Card class="mr-2 h-28 flex items-center justify-center">
+      <Card class="mr-2 h-28 flex items-center justify-center text-center">
         <template #content>
-          <div class="flex items-center justify">
+          <div class="w-32 flex items-center flex-col">
             <p>Points in Route:</p>
             <p class="text-lg font-bold ml-2">
               {{ routeStore.tasks.reduce((a, b) => a + b.reward, 0) }}
@@ -59,9 +59,9 @@
           </div>
         </template>
       </Card>
-      <Card class="h-28 flex items-center justify-center">
+      <Card class="h-28 flex items-center justify-center text-center">
         <template #content>
-          <div class="flex items-center">
+          <div class="w-32 flex items-center flex-col">
             <p>Points Completed:</p>
             <p class="text-lg font-bold ml-2">
               {{
