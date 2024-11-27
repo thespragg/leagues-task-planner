@@ -215,7 +215,6 @@ const openDialog = () => {
 };
 
 const handleSubmit = () => {
-  if (capturedText.value.trim() && selectedTasks.value.length > 0) {
     const taskData = {
       id: props.task?.id ?? Math.random(),
       name: capturedText.value,
@@ -236,7 +235,6 @@ const handleSubmit = () => {
     capturedText.value = "";
     selectedTasks.value = [];
     searchQuery.value = "";
-  }
 };
 
 const tagColour = (value: number) => {

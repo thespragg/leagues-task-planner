@@ -14,6 +14,41 @@
       <RoutesDialog />
     </div>
     <div class="flex items-center justify-center">
+      <Card>
+        <template #content>
+          <div class="flex items-center">
+            <p>Tasks In Route:</p>
+            <p class="text-lg font-bold ml-2">
+              {{
+                routeStore.tasks.reduce(
+                  (a, b) =>
+                    a + ((b.children || []).length > 0 ? b.children.length : 1),
+                  0
+                )
+              }}
+            </p>
+          </div>
+        </template>
+      </Card>
+      <Card>
+        <template #content>
+          <div class="flex items-center">
+            <p>Tasks Completed:</p>
+            <p class="text-lg font-bold ml-2">
+              {{
+                routeStore.tasks
+                  .filter((x) => x.completed && x.reward != 0)
+                  .reduce(
+                    (a, b) =>
+                      a +
+                      ((b.children || []).length > 0 ? b.children.length : 1),
+                    0
+                  )
+              }}
+            </p>
+          </div>
+        </template>
+      </Card>
       <Card class="mr-2">
         <template #content>
           <div class="flex items-center justify">

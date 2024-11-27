@@ -1,0 +1,1124 @@
+[
+  {
+    "id": 0.9388934793577884,
+    "name": "Don't unlock any regions until finished the route",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 190,
+    "name": "Complete the Leagues Tutorial",
+    "description": "Complete the Leagues Tutorial and begin your adventure",
+    "reward": 10,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 189,
+    "name": "Open the Leagues Menu",
+    "description": "Open the Leagues Menu found within the Journal Panel",
+    "reward": 10,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.05162494628751513,
+    "name": "Turn on Thick Skin to drain prayer",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.9991288158091438,
+    "name": "Get dramen staff from leagues tutor if we didn't spawn with one",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 1556,
+    "name": "Talk to Hans",
+    "description": "Talk to Hans and have him tell you how old you are",
+    "reward": 10,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.5028094833664914,
+    "name": "Drop runes at mage tutor, claim more runes",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.49542822278188836,
+    "name": "Run to the general store",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.33133036044294684,
+    "name": "sell bow, net, bronze sword, shield, dagger to the shop",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.9853272750503663,
+    "name": "buy 1 knife, 1 sheers, 2 MORE buckets and 1 MORE pot",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.10366468699641063,
+    "name": "Go to the pub east and buy 2 beers (option 1)",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.3219438280987855,
+    "name": "run north to sheep sheerer area and kill chicken with fist",
+    "description": "",
+    "reward": 10,
+    "completed": false,
+    "requirements": "N/A",
+    "children": [
+      1559
+    ]
+  },
+  {
+    "id": 0.5203428107234419,
+    "name": "Loot the raw chicken and bury the bones",
+    "description": "",
+    "reward": 10,
+    "completed": false,
+    "requirements": "N/A",
+    "children": [
+      97
+    ]
+  },
+  {
+    "id": 0.7580598752602236,
+    "name": "Run south to onion field, pick three, eat one [SKIP IF CONTESTED]",
+    "description": "",
+    "reward": 10,
+    "completed": false,
+    "requirements": "N/A",
+    "children": [
+      1562
+    ]
+  },
+  {
+    "id": 0.8776979162012625,
+    "name": "Loot egg from chicken pen or from coop if spawn is missing",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.23625744402843363,
+    "name": "Go west to wheat field, cry and then take a wheat",
+    "description": "",
+    "reward": 10,
+    "completed": false,
+    "requirements": "N/A",
+    "children": [
+      1287
+    ]
+  },
+  {
+    "id": 0.12137916678429417,
+    "name": "Continue west & spam click haystack for a needle",
+    "description": "",
+    "reward": 30,
+    "completed": false,
+    "requirements": "N/A",
+    "children": [
+      1530
+    ]
+  },
+  {
+    "id": 1154,
+    "name": "Make some Flour",
+    "description": "Make some Flour in a windmill",
+    "reward": 30,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.8130569431429734,
+    "name": "Go to the cow field to the north and get 2x buckets of milk",
+    "description": "",
+    "reward": 10,
+    "completed": false,
+    "requirements": "N/A",
+    "children": [
+      1306
+    ]
+  },
+  {
+    "id": 289,
+    "name": "Chop Some Logs",
+    "description": "Chop any kind of logs",
+    "reward": 10,
+    "completed": false,
+    "requirements": "Any axe",
+    "children": []
+  },
+  {
+    "id": 310,
+    "name": "Fletch Some Arrow Shafts",
+    "description": "Fletch some Arrow Shafts",
+    "reward": 10,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.4443948128356199,
+    "name": "Cut another tree and then burn the logs",
+    "description": "",
+    "reward": 10,
+    "completed": false,
+    "requirements": "N/A",
+    "children": [
+      371
+    ]
+  },
+  {
+    "id": 0.6505202592514547,
+    "name": "Do 10 laps of Draynor rooftops, or until mark of grace is acquired",
+    "description": "",
+    "reward": 70,
+    "completed": false,
+    "requirements": "N/A",
+    "children": [
+      459,
+      460,
+      386
+    ]
+  },
+  {
+    "id": 191,
+    "name": "Achieve Your First Level Up",
+    "description": "Level up any of your skills for the first time",
+    "reward": 10,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 192,
+    "name": "Achieve Your First Level 5",
+    "description": "Reach level 5 in any skill (not including Agility, Hitpoints and Runecraft)",
+    "reward": 10,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 193,
+    "name": "Achieve Your First Level 10",
+    "description": "Reach level 10 in any skill (not including Agility and Hitpoints)",
+    "reward": 10,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 194,
+    "name": "Achieve Your First Level 20",
+    "description": "Reach level 20 in any skill",
+    "reward": 10,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.08183576906171475,
+    "name": "Start Vampyre slayer & grab garlic",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.8644994594405215,
+    "name": "Bank everything but coins + 1 beer + dramen staff + air runes + mind runes",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.6021356100465497,
+    "name": "Buy 4 barley seeds from the farming shop",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.894168864052537,
+    "name": "Run to fortunado and buy wines",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 431,
+    "name": "Cast Home Teleport",
+    "description": "Cast the Home Teleport spell",
+    "reward": 10,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 1561,
+    "name": "Pray at an Altar in Lumbridge",
+    "description": "Pray at an Altar in Lumbridge",
+    "reward": 10,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 1557,
+    "name": "Ask for a Quest from Bob",
+    "description": "Talk to Bob in Lumbridge axe shop and ask for a Quest",
+    "reward": 10,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 1288,
+    "name": "Dance in a graveyard",
+    "description": "Dance in a graveyard",
+    "reward": 10,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 409,
+    "name": "Visit Death's Domain",
+    "description": "Visit Death's Domain",
+    "reward": 10,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.38934632607716824,
+    "name": "Teleport to the Stronghold of Security via Count Check",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.08153931040231865,
+    "name": "Kill a goblin holding a spear while in the stronghold",
+    "description": "",
+    "reward": 20,
+    "completed": false,
+    "requirements": "N/A",
+    "children": [
+      63,
+      1566
+    ]
+  },
+  {
+    "id": 1554,
+    "name": "Kill a Rat",
+    "description": "Kill a Rat",
+    "reward": 10,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 502,
+    "name": "Equip Some Fancy Boots or Fighting Boots",
+    "description": "Equip either a pair of Fancy Boots or a pair of Fighting Boots",
+    "reward": 30,
+    "completed": false,
+    "requirements": "Completion of the Stronghold of Security, two-factor authentication on your account.",
+    "children": []
+  },
+  {
+    "id": 0.49229385606287346,
+    "name": "Leave the stronghold, kill a Barbarian and keep the bones",
+    "description": "",
+    "reward": 10,
+    "completed": false,
+    "requirements": "N/A",
+    "children": [
+      1781
+    ]
+  },
+  {
+    "id": 0.09079590115456782,
+    "name": "Buy steel full helm",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 1780,
+    "name": "Drink a beer in the Longhall",
+    "description": "Drink a beer in the Longhall in Barbarian Village",
+    "reward": 10,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.28437367070284203,
+    "name": "Buy an enchanted gem and spiny helmet from wildy slayer master",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.5269789268668168,
+    "name": "Get a slayer task and then check it using the gem",
+    "description": "",
+    "reward": 10,
+    "completed": false,
+    "requirements": "N/A",
+    "children": [
+      319
+    ]
+  },
+  {
+    "id": 0.9971962843460549,
+    "name": "Use the fairy ring to go to zanaris",
+    "description": "",
+    "reward": 20,
+    "completed": false,
+    "requirements": "N/A",
+    "children": [
+      508,
+      494
+    ]
+  },
+  {
+    "id": 0.799370932629336,
+    "name": "Fairy ring back to DKR",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.5466880175559552,
+    "name": "Run to Gertrude, get a kitten, stroke it",
+    "description": "",
+    "reward": 10,
+    "completed": false,
+    "requirements": "N/A",
+    "children": [
+      1775
+    ]
+  },
+  {
+    "id": 0.5973001141265415,
+    "name": "Pick up cat, bank everything and take out 4 barley seeds, raw chicken, flour, egg, milk, axe, knife, tinderbox, coins, pickaxe, beer, sheers, bucket, bones in varrock west (14 items)",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.8754804386490567,
+    "name": "Pet the stray dog and give it the bones on the way to Zaff",
+    "description": "",
+    "reward": 10,
+    "completed": false,
+    "requirements": "N/A",
+    "children": [
+      498
+    ]
+  },
+  {
+    "id": 0.7668757394485608,
+    "name": "Buy and equip an air staff",
+    "description": "",
+    "reward": 10,
+    "completed": false,
+    "requirements": "N/A",
+    "children": [
+      430
+    ]
+  },
+  {
+    "id": 0.22124025536209646,
+    "name": "Start demon slayer",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.37921866980171803,
+    "name": "Buy a hammer from the general store",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.38962111684377654,
+    "name": "Buy a red cape from Thesselias shop for diary",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.27642584510661083,
+    "name": "buy a newspaper from benny (diary)",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.690619523075813,
+    "name": "run north to varrock castle and talk to sir prysin (3,1,2,2)",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.7176783343141717,
+    "name": "go nw and talk to captain rovin (3,1,2,2,3,1)",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.5036727972881541,
+    "name": "fill bucket with water and use on drain to the east",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.5738118703300255,
+    "name": "exit the castle to the east",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 356,
+    "name": "Purchase a Player Owned House",
+    "description": "Purchase a Player Owned House",
+    "reward": 10,
+    "completed": false,
+    "requirements": "1,000 or completion of   Daddy's Home",
+    "children": []
+  },
+  {
+    "id": 1776,
+    "name": "Get a haircut",
+    "description": "Go and get a haircut",
+    "reward": 10,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.2751382411383958,
+    "name": "run south to aubury and buy 100 mind runes + 50  fire/water/earth",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 364,
+    "name": "Visit the Rune Essence Mine",
+    "description": "Visit the Rune Essence Mine",
+    "reward": 10,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.29661632206255173,
+    "name": "Mine 1 essence then leave",
+    "description": "",
+    "reward": 10,
+    "completed": false,
+    "requirements": "N/A",
+    "children": [
+      1801
+    ]
+  },
+  {
+    "id": 0.4462740833691772,
+    "name": "go to the house west (daddys home house) and use the steel helm on the hat stand",
+    "description": "",
+    "reward": 10,
+    "completed": false,
+    "requirements": "N/A",
+    "children": [
+      1540
+    ]
+  },
+  {
+    "id": 1555,
+    "name": "Kill a Mugger",
+    "description": "Kill a Mugger",
+    "reward": 10,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 1547,
+    "name": "Upset the homeless",
+    "description": "Anger the Tramp, in south east Varrock",
+    "reward": 10,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.9472022478683226,
+    "name": "Run south west and pick a cabbage",
+    "description": "",
+    "reward": 10,
+    "completed": false,
+    "requirements": "N/A",
+    "children": [
+      1771
+    ]
+  },
+  {
+    "id": 0.1217207373991096,
+    "name": "talk to dr harlow TWICE at the blue moon inn (option 2)",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.5626791809069441,
+    "name": "pickpocket the woman in the bar until 15 thief, open a full stack of coin pouches at least once",
+    "description": "",
+    "reward": 40,
+    "completed": false,
+    "requirements": "N/A",
+    "children": [
+      273,
+      274
+    ]
+  },
+  {
+    "id": 0.7617966633741519,
+    "name": "go to sword shop and buy an iron + mith + addy dagger",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 1560,
+    "name": "Equip an Iron dagger",
+    "description": "Equip an Iron dagger",
+    "reward": 10,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.0865889289555759,
+    "name": "Run south and kill a Dark Wizard",
+    "description": "",
+    "reward": 10,
+    "completed": false,
+    "requirements": "N/A",
+    "children": [
+      1314
+    ]
+  },
+  {
+    "id": 0.9199727939153631,
+    "name": "run east and wc + fm until 15 wc. fm until 15 then fletch rest into shafts",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.2319377321614685,
+    "name": "run east and pick 3 redberries",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.13317801590343892,
+    "name": "run into the pen sw and sheer a sheep",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 1558,
+    "name": "Kill a Ram",
+    "description": "Kill a Ram",
+    "reward": 10,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.6249000619445009,
+    "name": "jump over the fence to the south (diary)",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.8088106636367137,
+    "name": "buy a rake + 4 compost + seed dibber from the hops farmer",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 280,
+    "name": "Rake a Farming Patch",
+    "description": "Rake any Farming patch",
+    "reward": 10,
+    "completed": false,
+    "requirements": "Rake",
+    "children": []
+  },
+  {
+    "id": 0.9043206494882194,
+    "name": "use compost on patch for 3 farming",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.7416573950052303,
+    "name": "plant the barley seeds and pay the farmer for protection",
+    "description": "",
+    "reward": 10,
+    "completed": false,
+    "requirements": "N/A",
+    "children": [
+      282
+    ]
+  },
+  {
+    "id": 0.5283888194292534,
+    "name": "run into potato field se and cut the oak tree",
+    "description": "",
+    "reward": 10,
+    "completed": false,
+    "requirements": "N/A",
+    "children": [
+      1315
+    ]
+  },
+  {
+    "id": 372,
+    "name": "Burn Some Oak Logs",
+    "description": "Burn some Oak Logs",
+    "reward": 10,
+    "completed": false,
+    "requirements": "15 Firemaking",
+    "children": []
+  },
+  {
+    "id": 0.6281262070101424,
+    "name": "misthalin league teleport back to lumby",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.18909512011192853,
+    "name": "buy 200 fishing bait from general store",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 1563,
+    "name": "Kill a Duck with a fire spell",
+    "description": "Kill a Duck with a fire spell",
+    "reward": 10,
+    "completed": false,
+    "requirements": "13 Magic",
+    "children": []
+  },
+  {
+    "id": 0.05382275349125909,
+    "name": "Finish cooks assistant",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.6958941357656345,
+    "name": "Cook the chicken on the range",
+    "description": "",
+    "reward": 30,
+    "completed": false,
+    "requirements": "N/A",
+    "children": [
+      450
+    ]
+  },
+  {
+    "id": 0.5480534626352656,
+    "name": "Try to use chicken on range to burn it, if it doesnt work skip",
+    "description": "",
+    "reward": 10,
+    "completed": false,
+    "requirements": "N/A",
+    "children": [
+      297
+    ]
+  },
+  {
+    "id": 1774,
+    "name": "Use the Northern Staircase in Lumbridge",
+    "description": "Use the Northern Staircase in Lumbridge Castle to go upstairs from the bottom floor",
+    "reward": 10,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.39278177480055876,
+    "name": "Talk to the duke and take a couple antifire shields",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 331,
+    "name": "Spin a Ball of Wool",
+    "description": "Use a Spinning Wheel to spin a Ball of Wool",
+    "reward": 10,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.2511170477957486,
+    "name": "Bank everything aside from cape, 3 redberries, and 2 onions, air staff,  mind runes + water + earth + fire",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.9904765938513646,
+    "name": "Go to the ham hideout and thief until all are met: 38 thieving, grimy guam, steel pickaxe, steel axe",
+    "description": "",
+    "reward": 30,
+    "completed": false,
+    "requirements": "N/A",
+    "children": [
+      454
+    ]
+  },
+  {
+    "id": 391,
+    "name": "Clean a Grimy Guam",
+    "description": "Clean a Grimy Guam",
+    "reward": 10,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.25613019580000296,
+    "name": "run west to draynor and use redberries and onion on aggie to get dyes",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.6311832476498,
+    "name": "combine the red and yellow dye for orange dye and use on the cape",
+    "description": "",
+    "reward": 10,
+    "completed": false,
+    "requirements": "N/A",
+    "children": [
+      1269
+    ]
+  },
+  {
+    "id": 0.32836510460832924,
+    "name": "Buy a chronicle and 4 pages",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 86,
+    "name": "Pickpocket a Master Farmer",
+    "description": "Successfully pickpocket from a Master farmer",
+    "reward": 30,
+    "completed": false,
+    "requirements": "38 Thieving",
+    "children": []
+  },
+  {
+    "id": 0.16218109656588664,
+    "name": "Run to the lumbridge caves entrance and buy a candle",
+    "description": "",
+    "reward": 30,
+    "completed": false,
+    "requirements": "N/A",
+    "children": [
+      1567
+    ]
+  },
+  {
+    "id": 0.734183033734045,
+    "name": "Use chronicle to get to varrock tea stall & steal from it",
+    "description": "",
+    "reward": 10,
+    "completed": false,
+    "requirements": "N/A",
+    "children": [
+      457
+    ]
+  },
+  {
+    "id": 1321,
+    "name": "Have Elsie tell you a story",
+    "description": "Have Elsie tell you a story in Varrock",
+    "reward": 10,
+    "completed": false,
+    "requirements": "A cup of tea",
+    "children": []
+  },
+  {
+    "id": 512,
+    "name": "Complete the Natural History Quiz",
+    "description": "Complete the Natural History Quiz in the Varrock Museum",
+    "reward": 10,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.9568267279184246,
+    "name": "Talk to Minas upstairs for 5 kudos",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.8068852372189443,
+    "name": "get rock pick trowel leather gloves boots from the wall in finds room",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.14406877438626142,
+    "name": "clean finds until you get 2 unique ones, this gets 51+ kudos",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.3060343066211111,
+    "name": "speak to haig halen (dairy)",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.6389395657889096,
+    "name": "speak to the information clerk in the nw corner for 8k mining xp",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.18611003571122342,
+    "name": "Run west to varrock castle and kill a guard",
+    "description": "",
+    "reward": 10,
+    "completed": false,
+    "requirements": "N/A",
+    "children": [
+      64
+    ]
+  },
+  {
+    "id": 0.11568075109740983,
+    "name": "Pickpocket guards to 27 coin pouches then open them",
+    "description": "",
+    "reward": 60,
+    "completed": false,
+    "requirements": "N/A",
+    "children": [
+      455,
+      277
+    ]
+  },
+  {
+    "id": 0.5637401760210714,
+    "name": "go to v west bank and bank everything but runes, axe, fishing bait, echo harpoon and coins",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.9627485596849773,
+    "name": "leagues tele to karamja",
+    "description": "",
+    "reward": 0,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 0.3008474377956518,
+    "name": "Enter your house in building mode, build a 1k room, if you didnt get the task for entering your house, enter normal mode house after",
+    "description": "",
+    "reward": 40,
+    "completed": false,
+    "requirements": "N/A",
+    "children": [
+      649,
+      357
+    ]
+  },
+  {
+    "id": 679,
+    "name": "Pick a Pineapple on Karamja",
+    "description": "Pick a Pineapple on Karamja",
+    "reward": 10,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 1798,
+    "name": "Kill a Snake in Karamja",
+    "description": "Kill a Snake in Karamja",
+    "reward": 10,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  },
+  {
+    "id": 683,
+    "name": "Enter the Brimhaven Dungeon",
+    "description": "Enter the Brimhaven Dungeon",
+    "reward": 30,
+    "completed": false,
+    "requirements": "N/A",
+    "children": []
+  }
+]
