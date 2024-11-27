@@ -48,16 +48,4 @@ import { onMounted, ref } from "vue";
 import CustomTaskDialog from "./components/dialogs/CustomTaskDialog.vue";
 
 const showCompleted = ref(false);
-
-const toast = useToast();
-
-onMounted(() =>
-  toast.add({
-    severity: "error",
-    summary: "Region & Relic Tiers",
-    life: 5000,
-    detail:
-      "Currently only Region 1 and T1 have been released, until the remaining thresholds are released the site will be using TB Reloaded thresholds.",
-  })
-)
 </script>

@@ -88,13 +88,13 @@ const props = defineProps<{ showCompleted: boolean }>();
 const routeStore = useRouteStore();
 
 const relicThresholds: ThresholdInfo[] = [
-  { points: 500, name: "Relic 2", color: "#5a98e8" },
-  { points: 1200, name: "Relic 3", color: "#5a98e8" },
-  { points: 2000, name: "Relic 4", color: "#5a98e8" },
-  { points: 4000, name: "Relic 5", color: "#5a98e8" },
-  { points: 7500, name: "Relic 6", color: "#5a98e8" },
-  { points: 15000, name: "Relic 7", color: "#5a98e8" },
-  { points: 24000, name: "Relic 8", color: "#5a98e8" },
+  { points: 750, name: "Relic 2", color: "#5a98e8" },
+  { points: 1500, name: "Relic 3", color: "#5a98e8" },
+  { points: 2500, name: "Relic 4", color: "#5a98e8" },
+  { points: 5000, name: "Relic 5", color: "#5a98e8" },
+  { points: 8000, name: "Relic 6", color: "#5a98e8" },
+  { points: 16000, name: "Relic 7", color: "#5a98e8" },
+  { points: 25000, name: "Relic 8", color: "#5a98e8" },
 ];
 
 const tierThresholds: ThresholdInfo[] = [
@@ -108,9 +108,9 @@ const tierThresholds: ThresholdInfo[] = [
 ];
 
 const regionThresholds: ThresholdInfo[] = [
-  { points: 60, name: "Region 1", color: "#9954de" },
-  { points: 140, name: "Region 2", color: "#9954de" },
-  { points: 300, name: "Region 3", color: "#9954de" },
+  { points: 90, name: "Region 1", color: "#9954de" },
+  { points: 200, name: "Region 2", color: "#9954de" },
+  { points: 400, name: "Region 3", color: "#9954de" },
 ];
 
 const allThresholds = [...relicThresholds, ...tierThresholds].sort(
